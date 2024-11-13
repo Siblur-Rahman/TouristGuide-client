@@ -17,7 +17,8 @@ const Banner = () => {
     }
   ]
   return (
-    <Swiper
+    <div className="py-10">
+      <Swiper
     modules={[Navigation, Pagination, Scrollbar, A11y]}
     spaceBetween={50}
     slidesPerView={1}
@@ -42,6 +43,7 @@ const Banner = () => {
                                               </SwiperSlide>)
                                         }
   </Swiper>
+    </div>
         
   );
 };

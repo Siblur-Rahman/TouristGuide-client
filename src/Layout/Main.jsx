@@ -8,7 +8,7 @@ const Main = () => {
             <div className="pt-20 min-h-screen">
                 <Outlet/>
             </div>
-            <div>
+            <div className="py-10">
             </div>
         </div>
     );
