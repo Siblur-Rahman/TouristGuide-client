@@ -12,8 +12,8 @@ const TourType = () => {
         slidesToScroll: 1
       };
     return (
-        <div className="bg-[#2b2626] py-10">
-            <div className="text-white"><SectionTitle heading={'Tour Type'}/></div>
+        <div className="bg-[#d8d0d0] py-10">
+            <div className=""><SectionTitle heading={'Tour Type'}/></div>
             <div className="my-20 w-3/4 m-auto">
             <Slider {...settings}>
                 {data?.map((d, index)=>(

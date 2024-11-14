@@ -9,7 +9,7 @@ const AllStoriesPage = ({ stories }) => (
       {stories.map((story, index) => (
         <div key={index} className='w-1/5'>
         <Link key={story.id} to={`/stories/${story.id}`}>
-          <div className="story-preview text-white text-center border-2 h-[100px]">
+          <div className="story-preview text-center border-2 h-[100px]">
             <h3>{story.title}</h3>
             <p>{story.summary}</p>
           </div>

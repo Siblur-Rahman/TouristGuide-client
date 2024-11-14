@@ -4,7 +4,7 @@ import Footer from "../shared/Footer";
 
 const Main = () => {
     return (
-        <div className="max-w-5xl mx-auto bg-slate-500 px-4">
+        <div className="max-w-5xl mx-auto px-4">
                 <Header/>
             <div className="pt-20 min-h-screen">
                 <Outlet/>

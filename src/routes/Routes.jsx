@@ -3,6 +3,7 @@ import Main from "../Layout/Main";
 import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home/Home/Home";
 import StoryDetailPage from './../pages/Home/StorySection/StoryDetailPage';
+import PackageDetails from "../pages/packageDetails/packageDetails";
 // import AllStoriesPage from './../pages/Home/StorySection/AllStoriesPage';
 
 export const stories = [
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
         {
             path: "/stories/:id",
             element:<StoryDetailPage stories={stories}/>
+        },
+        {
+          path:'/package-details',
+          element:<PackageDetails/>
         }
       ]
     }
