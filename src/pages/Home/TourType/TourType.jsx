@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import SectionTitle from "../../../components/SectionTitle";
 
 const TourType = () => {
     const settings = {
@@ -12,6 +13,7 @@ const TourType = () => {
       };
     return (
         <div className="bg-[#2b2626] py-10">
+            <div className="text-white"><SectionTitle heading={'Tour Type'}/></div>
             <div className="my-20 w-3/4 m-auto">
             <Slider {...settings}>
                 {data?.map((d, index)=>(
