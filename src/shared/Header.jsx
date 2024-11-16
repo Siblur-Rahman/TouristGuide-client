@@ -1,9 +1,11 @@
 
-import {NavLink } from "react-router-dom";
+import {Link, NavLink } from "react-router-dom";
 import useAuth from './../hooks/useAuth';
 const Header = () => {
     const {user, logOut} = useAuth()
-
+    const isAdmin = true;
+    const isTourGuide = true;
+    const isTourist = true;
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -47,13 +49,22 @@ const Header = () => {
                             </div>
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-6 p-2 shadow bg-base-100 rounded-box w-52 z-10">
-                            <li>
-                            <a className="justify-between">
                                {
                                 user.displayName
                                }
-                            </a>
-                            </li>
+                            {/* <li>
+                                <NavLink className="" to={}>
+                            </NavLink>
+                            </li> */}
+                        {
+                            user && isAdmin && <li><Link to="/dashboard/adminprofile">Dashboard</Link></li>
+                        }
+                        {
+                            user && isTourGuide && <li><Link to="/dashboard/guideprofile">Dashboard</Link></li>
+                        }
+                        {
+                            user && !isTourist && <li><Link to="/dashboard/touristprofile">Dashboard</Link></li>
+                        }
                         <li><a onClick={handleLogOut} className="btn btn-sm">Sign out</a></li>
                         </ul>
                         </>

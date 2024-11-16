@@ -2,12 +2,12 @@
 import { FacebookShareButton, FacebookIcon } from 'react-share';
 import { useParams, Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-// import { useAuth } from '../hooks/useAuth'; // assuming you have an auth hook
 
 const StoryDetailPage = ({ stories }) => {
   const { id } = useParams();
   const story = stories.find((story) => story.id === id);
-  const { user } = useAuth();
+  const {user} = useAuth();
+  console.log(user)
 
   if (!story) return <p>Story not found</p>;
 
