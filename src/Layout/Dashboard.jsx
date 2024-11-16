@@ -1,18 +1,20 @@
 import { NavLink, Outlet } from "react-router-dom";
 import {FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
+import useAuth from "../hooks/useAuth";
 
 const Dashboard = () => {
     // ToDo: get isAmin from the database
+    const {user}= useAuth()
     const isAdmin = true;
     const isTourGuide = false;
-    const isTourist = false;
+    // const isTourist = false;
     return (
         <div className="flex">
             {/*dashboard sidebar*/}
             <div className="w-64 h-screen bg-orange-400">
                 <ul className="menu p-4">
                     {
-                        isTourist && 
+                       user && !isAdmin && !isTourGuide &&
                             <>
                                 <li><NavLink to="/dashboard/touristprofile">
                                     <FaHome />

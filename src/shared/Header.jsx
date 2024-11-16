@@ -63,7 +63,7 @@ const Header = () => {
                             user && isTourGuide && <li><Link to="/dashboard/guideprofile">Dashboard</Link></li>
                         }
                         {
-                            user && !isTourist && <li><Link to="/dashboard/touristprofile">Dashboard</Link></li>
+                            user && isTourist && <li><Link to="/dashboard/touristprofile">Dashboard</Link></li>
                         }
                         <li><a onClick={handleLogOut} className="btn btn-sm">Sign out</a></li>
                         </ul>

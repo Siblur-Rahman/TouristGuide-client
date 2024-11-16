@@ -6,6 +6,10 @@ import StoryDetailPage from './../pages/Home/StorySection/StoryDetailPage';
 import PackageDetails from "../pages/packageDetails/packageDetails";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
+import PrivatRoute from "./PrivatRoute";
+import Dashboard from "../Layout/Dashboard";
+import Touristprofile from './../pages/Dashboard/UserDashboard/Touristprofile';
+import ManageUsers from "../pages/Dashboard/AdminDashboard/ManageUsers";
 
 export const stories = [
   { id: '1', title: 'Story 1', summary: 'This is story 1', content: 'Full content of story 1' },
@@ -39,6 +43,21 @@ export const router = createBrowserRouter([
           path:'/package-details',
           element:<PackageDetails/>
         }
+      ]
+    },
+    {
+      path:"dashboard",
+      element:<PrivatRoute><Dashboard/></PrivatRoute>,
+      children:[
+        // normal routes
+        {
+          path:'touristprofile',
+          element:<Touristprofile/>
+        },
+        {
+          path:'manageusers',
+          element:<ManageUsers/>
+        },
       ]
     }
     ])
