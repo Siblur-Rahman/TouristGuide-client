@@ -4,7 +4,8 @@ import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home/Home/Home";
 import StoryDetailPage from './../pages/Home/StorySection/StoryDetailPage';
 import PackageDetails from "../pages/packageDetails/packageDetails";
-// import AllStoriesPage from './../pages/Home/StorySection/AllStoriesPage';
+import SignUp from "../pages/SignUp/SignUp";
+import Login from "../pages/Login/Login";
 
 export const stories = [
   { id: '1', title: 'Story 1', summary: 'This is story 1', content: 'Full content of story 1' },
@@ -21,6 +22,14 @@ export const router = createBrowserRouter([
         {
             path: "/",
             element:<Home/>
+        },
+        {
+          path:'/signup',
+          element:<SignUp/>
+        },
+        {
+          path:'/login',
+          element:<Login/>
         },
         {
             path: "/stories/:id",

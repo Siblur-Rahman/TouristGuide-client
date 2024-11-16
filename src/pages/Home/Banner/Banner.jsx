@@ -4,20 +4,27 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import banner from '../../../assets/images/Banner/banner.png'
+import banner2 from '../../../assets/images/Banner/banner2.png'
+import banner3 from '../../../assets/images/Banner/banner3.png'
 
 const Banner = () => {
   const images = [
     {
-      image:`https://img.freepik.com/free-photo/green-lake_1136-145.jpg?uid=R149982094&ga=GA1.1.1129426385.1730786029&semt=ais_hybrid`,
-      country_Name:'Bangladesh'
+      image:`${banner}`,
+      country_Name:'Indonesia'
     },
     {
-      image:`https://img.freepik.com/premium-photo/scenic-view-sea-against-sky_1048944-14143995.jpg?w=740`,
-      country_Name:'Thailand'
+      image:`${banner2}`,
+      country_Name:'Australia'
+    },
+    {
+      image:`${banner3}`,
+      country_Name:'Switzerland'
     }
   ]
   return (
-    <div className="py-10 hover:opacity-40">
+    <div className="py-10 hover:opacity-40 relative">
       <Swiper
     modules={[Navigation, Pagination, Scrollbar, A11y]}
     spaceBetween={50}
@@ -31,7 +38,7 @@ const Banner = () => {
             {
                 images.map(spot => <SwiperSlide key={spot.id} className="">
                   <img src={spot.image} className="rounded-box w-full h-[500px]" />
-                  <div className="absolute text-3xl text-center font-bold text-red-600 z-10 top-1/2 left-1/2 bg-gray-300 p-2 rounded-2xl">
+                  <div className="absolute left-[30%] top-[50%] text-6xl text-center left- font-bold text-red-600 z-10 p-2 rounded-2xl">
                     <div>
                     {spot.country_Name}
                     </div>

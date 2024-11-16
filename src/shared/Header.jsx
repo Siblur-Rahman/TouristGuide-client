@@ -1,18 +1,21 @@
 
 import {NavLink } from "react-router-dom";
+import useAuth from './../hooks/useAuth';
 const Header = () => {
-      const user = false
+    const {user, logOut} = useAuth()
 
-      const handleLogOut = ()=>{
-console.log('Logout')
-      }
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
         const navLink =<>
             <li><NavLink to="/" >Home</NavLink></li>
             <li><NavLink to="/Community" >Community</NavLink></li>
             <li><NavLink to="/Contact Us," >Contact Us</NavLink></li>
             {!user && <>
                 <li><NavLink to="/login" >Login</NavLink></li>
-                 <li><NavLink to="/register" >Register</NavLink></li>
+                 <li><NavLink to="/signup" >Register</NavLink></li>
             </>}
             </>
     return (
