@@ -1,26 +1,54 @@
 import { NavLink, Outlet } from "react-router-dom";
-import {FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUsers, FaUtensils } from "react-icons/fa";
+import {FaHome, FaList, FaUsers, FaUtensils } from "react-icons/fa";
+import useAdmin from "../hooks/useAdmin";
+import useTourGuide from "../hooks/useTourGuide";
+import Swal  from 'sweetalert2';
+import useAxiosSecure from "../hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 import useAuth from "../hooks/useAuth";
 
 const Dashboard = () => {
-    // ToDo: get isAmin from the database
-    const {user}= useAuth()
-    const isAdmin = true;
-    const isTourGuide = false;
-    // const isTourist = false;
+    const {user} = useAuth();
+    const [isAdmin] = useAdmin();
+    const [isTourGuide]= useTourGuide()
+    const axiosSecure = useAxiosSecure();
+    const {data: tourist, refetch} = useQuery({
+        queryKey:['tourist'],
+        queryFn: async () =>{
+            const res = await axiosSecure.get(`/user/tourist/${user.email}`
+          );
+            return res.data
+        }
+    });
+
+    const handleRequest = tourist =>{
+        axiosSecure.patch(`/user/request/${tourist?._id}`)
+        .then(res =>{
+            if(res.data.modifiedCount > 0){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `Qequest Successfull`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  refetch();
+            }
+        })
+    }
     return (
         <div className="flex">
             {/*dashboard sidebar*/}
             <div className="w-64 h-screen bg-orange-400">
                 <ul className="menu p-4">
                     {
-                       user && !isAdmin && !isTourGuide &&
+                       tourist &&
                             <>
                                 <li><NavLink to="/dashboard/touristprofile">
                                     <FaHome />
                                     My Profile</NavLink>
                                 </li>
-                                <li><NavLink to="/dashboard/bookings">
+                                <li><NavLink to="/dashboard/touristbookings">
                                     <FaList />
                                     My Booking</NavLink>
                                 </li>
@@ -28,8 +56,15 @@ const Dashboard = () => {
                                     <FaList />
                                     My Wishlist</NavLink>
                                 </li>
-                                <li><NavLink to="/dashboard/wishlist">
-                                    request</NavLink>
+                                <li>
+                                        <button 
+                                        onClick={()=>handleRequest(tourist)} 
+                                        disabled={tourist?.request}
+                                        className="btn btn-ghost bg-orange-300 btn-xs">
+                                            {
+                                                tourist?.request? 'Requested' : 'Request to be Tour Guide'
+                                            }
+                                        </button>
                                 </li>
                             </>
                     },
@@ -40,7 +75,7 @@ const Dashboard = () => {
                                     <FaHome />
                                     My Profile</NavLink>
                                 </li>
-                                <li><NavLink to="/dashboard/bookings">
+                                <li><NavLink to="/dashboard/guidebookings">
                                     <FaList />
                                     My Booking</NavLink>
                                 </li>
@@ -74,14 +109,8 @@ const Dashboard = () => {
                         <FaHome />
                         Home</NavLink>
                     </li>
-                    <li><NavLink to="/order/salad">
-                        <FaSearch />
-                        Menu</NavLink>
-                    </li>
-                    <li><NavLink to="/order/salad">
-                        <FaEnvelope />
-                        Contact</NavLink>
-                    </li>
+                    <li><NavLink to="/Community" >Community</NavLink></li>
+                    <li><NavLink to="/Contact Us," >Contact Us</NavLink></li>
                 </ul>
             </div>
             {/* Dashboard Content */}

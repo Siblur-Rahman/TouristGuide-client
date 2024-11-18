@@ -1,16 +1,18 @@
 
 
-import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import PackageCard from './PackageCard';
 import TourGuideCard from './TourGuideCard';
 import video from './video/video.mp4'
+import usePackages from '../../../hooks/usePackages';
+import SectionTitle from '../../../components/SectionTitle';
 
 const TourismGuideTabs = () => {
+  const [packages] = usePackages();
   return (
     <div className="tourism-guide-section">
-      <h2>Explore the World with Us</h2>
+      <h2>Explore the World with Us {packages?.length}</h2>
       <Tabs>
         <TabList>
           <Tab>Overview</Tab>
@@ -31,26 +33,13 @@ const TourismGuideTabs = () => {
 
         <TabPanel>
           <div className="packages-tab">
-            <h3>Our Packages</h3>
-            <div className="package-cards">
-              <PackageCard 
-                image="path/to/image1.jpg" 
-                title="Adventure in Bali" 
-                type="Adventure" 
-                price="$1200" 
+            <SectionTitle heading={'Our Packages'}/>
+            <div className="package-cards lg:flex gap-4">
+              {packages?.map((pack, index) => <div key={index} className='lg:w-[30%] md:w-full sm:w-full'>
+              <PackageCard
+                pack={pack} 
               />
-              <PackageCard 
-                image="path/to/image2.jpg" 
-                title="Romantic Paris" 
-                type="Romantic" 
-                price="$1500" 
-              />
-              <PackageCard 
-                image="path/to/image3.jpg" 
-                title="Explore Japan" 
-                type="Cultural" 
-                price="$1400" 
-              />
+              </div>)}
             </div>
             <button className="all-packages-btn">View All Packages</button>
           </div>

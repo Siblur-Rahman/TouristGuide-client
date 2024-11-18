@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { FaTrashAlt, FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
@@ -9,13 +9,6 @@ const ManageUsers = () => {
         queryKey:['users'],
         queryFn: async () =>{
             const res = await axiosSecure.get('/users'
-              // 68-8 (advanced) verify token and axios interceptor 8:00
-              // ,
-            //   {
-            //     headers: {
-            //         authorization: `Bear ${localStorage.getItem('access-token')}`
-            //     }
-            // }
           );
             return res.data
         }
@@ -84,12 +77,12 @@ const ManageUsers = () => {
                     {user.email}
                   </td>
                   <td>
-                    {!user?.role? 'Tourist' : user?.role }
+                    {user?.role }
                   </td>
                   <th>
                         <button 
                         onClick={()=>handleRoleAdmin(user)}
-                        disabled = {user?.role}
+                        disabled = {user?.role==='admin' || user?.role === 'tourguide'}
                         className="btn btn-ghost bg-orange-300 btn-xs">
                             <FaUser className="text-white text-2xl"/>
                             Make Admin
@@ -98,10 +91,10 @@ const ManageUsers = () => {
                   <th>
                         <button 
                         onClick={()=>handleRoleGuide(user)} 
-                        disabled = {user?.role}
-                        className="btn btn-ghost bg-orange-300 btn-xs">
+                        disabled = {!user?.request || (user?.role ==='admin' || user?.role ==='tourguide')}
+                        className="btn btn-ghost bg-orange-300 btn-xs flex">
                             <FaUser className="text-white text-2xl"/>
-                            Make Guide
+                            <span> Make Guide</span>
                         </button>
                   </th>
                 </tr>)

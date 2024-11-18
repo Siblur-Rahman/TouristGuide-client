@@ -1,0 +1,103 @@
+[
+    {
+      "packageType": "Adventure",
+      "tripTitle": "Mountain Hiking Expedition",
+      "price": 150,
+      "tourInformation": "Experience an exhilarating hiking adventure through breathtaking mountain trails. This package offers guided tours, safety gear, and meals to ensure a thrilling yet comfortable journey for hikers of all levels.",
+      "tourPlan": {
+        "1Day": "Morning hike to the summit and enjoy panoramic views. Afternoon return with lunch at the base camp.",
+        "2Days": "Day 1: Trek to the mid-point, camp overnight under the stars. Day 2: Continue to the summit and descend."
+      }
+    },
+    {
+      "packageType": "Cultural",
+      "tripTitle": "Heritage City Tour",
+      "price": 100,
+      "tourInformation": "Dive into the rich history and vibrant culture of the heritage city. Visit ancient monuments, traditional markets, and enjoy local cuisines guided by experts.",
+      "tourPlan": {
+        "1Day": "Morning city tour covering key heritage sites. Afternoon visit to a local market and evening cultural performance.",
+        "2Days": "Day 1: Explore historical landmarks and museums. Day 2: Visit temples and enjoy a local festival."
+      }
+    },
+    {
+      "packageType": "Beach",
+      "tripTitle": "Tropical Island Getaway",
+      "price": 200,
+      "tourInformation": "Relax on pristine beaches, swim in crystal-clear waters, and indulge in tropical delights. Ideal for couples and families seeking a serene escape.",
+      "tourPlan": {
+        "1Day": "Morning beach activities, lunch by the shore, and an evening sunset cruise.",
+        "2Days": "Day 1: Explore the beach and enjoy water sports. Day 2: Snorkeling and island hopping."
+      }
+    },
+    {
+      "packageType": "Wildlife",
+      "tripTitle": "Safari Adventure",
+      "price": 180,
+      "tourInformation": "Embark on a thrilling safari to witness majestic wildlife in their natural habitat. Includes guided tours and photography opportunities.",
+      "tourPlan": {
+        "1Day": "Morning safari drive, lunch in the reserve, and return by evening.",
+        "2Days": "Day 1: Morning and evening safaris. Day 2: Nature walk and birdwatching tour."
+      }
+    },
+    {
+      "packageType": "Luxury",
+      "tripTitle": "Exclusive City Escape",
+      "price": 400,
+      "tourInformation": "Pamper yourself with a luxurious city escape. Stay at premium hotels, enjoy fine dining, and exclusive city tours with VIP access.",
+      "tourPlan": {
+        "1Day": "Morning city tour with VIP access, lunch at a Michelin-star restaurant, and a spa session.",
+        "2Days": "Day 1: Exclusive shopping and luxury dining. Day 2: Private guided museum and gallery tours."
+      }
+    },
+    {
+      "packageType": "Eco",
+      "tripTitle": "Rainforest Retreat",
+      "price": 250,
+      "tourInformation": "Reconnect with nature in a serene rainforest retreat. Experience eco-living with guided nature walks and organic meals.",
+      "tourPlan": {
+        "1Day": "Morning jungle trek, lunch with local flavors, and an evening bonfire.",
+        "2Days": "Day 1: Explore rainforest trails and local flora. Day 2: Visit a waterfall and enjoy meditation sessions."
+      }
+    },
+    {
+      "packageType": "Adventure",
+      "tripTitle": "Desert Camping Experience",
+      "price": 170,
+      "tourInformation": "Uncover the magic of the desert with camel rides, stargazing, and traditional desert hospitality. A perfect blend of adventure and culture.",
+      "tourPlan": {
+        "1Day": "Morning camel ride, lunch in the oasis, and evening cultural show.",
+        "2Days": "Day 1: Desert exploration and overnight camping. Day 2: Sunrise hike and dune bashing."
+      }
+    },
+    {
+      "packageType": "Historical",
+      "tripTitle": "Ancient Wonders Tour",
+      "price": 120,
+      "tourInformation": "Step back in time and discover ancient wonders with expert-guided tours to iconic archaeological sites and ruins.",
+      "tourPlan": {
+        "1Day": "Morning visit to ancient ruins, lunch at a traditional eatery, and an evening light show.",
+        "2Days": "Day 1: Explore archaeological sites and museums. Day 2: Visit ancient temples and enjoy a cultural workshop."
+      }
+    },
+    {
+      "packageType": "Wellness",
+      "tripTitle": "Yoga and Spa Retreat",
+      "price": 300,
+      "tourInformation": "Revitalize your mind and body with yoga sessions, spa treatments, and healthy meals in a tranquil setting.",
+      "tourPlan": {
+        "1Day": "Morning yoga, spa treatments, and organic meals.",
+        "2Days": "Day 1: Yoga and meditation sessions. Day 2: Detox treatments and nature walks."
+      }
+    },
+    {
+      "packageType": "Family",
+      "tripTitle": "Amusement Park Adventure",
+      "price": 130,
+      "tourInformation": "Enjoy thrilling rides, fun games, and family-friendly attractions at the best amusement park in the region.",
+      "tourPlan": {
+        "1Day": "Morning arrival, full-day rides, and evening parade.",
+        "2Days": "Day 1: Rides and games. Day 2: Water park activities and evening show."
+      }
+    }
+  ]
+  

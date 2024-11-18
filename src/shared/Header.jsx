@@ -1,15 +1,19 @@
 
-import {Link, NavLink } from "react-router-dom";
+import {Link, NavLink, useNavigate } from "react-router-dom";
 import useAuth from './../hooks/useAuth';
+import useAdmin from "../hooks/useAdmin";
+import useTourGuide from "../hooks/useTourGuide";
 const Header = () => {
     const {user, logOut} = useAuth()
-    const isAdmin = true;
-    const isTourGuide = true;
-    const isTourist = true;
+    const [isAdmin] = useAdmin();
+    const [isTourGuide]= useTourGuide()
+    const navigate = useNavigate()
+
     const handleLogOut = () => {
         logOut()
             .then(() => { })
             .catch(error => console.log(error));
+            navigate('/');
     }
         const navLink =<>
             <li><NavLink to="/" >Home</NavLink></li>
@@ -63,7 +67,7 @@ const Header = () => {
                             user && isTourGuide && <li><Link to="/dashboard/guideprofile">Dashboard</Link></li>
                         }
                         {
-                            user && isTourist && <li><Link to="/dashboard/touristprofile">Dashboard</Link></li>
+                            user && !isTourGuide && !isAdmin && <li><Link to="/dashboard/touristprofile">Dashboard</Link></li>
                         }
                         <li><a onClick={handleLogOut} className="btn btn-sm">Sign out</a></li>
                         </ul>

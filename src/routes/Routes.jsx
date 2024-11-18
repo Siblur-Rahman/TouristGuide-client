@@ -10,6 +10,12 @@ import PrivatRoute from "./PrivatRoute";
 import Dashboard from "../Layout/Dashboard";
 import Touristprofile from './../pages/Dashboard/UserDashboard/Touristprofile';
 import ManageUsers from "../pages/Dashboard/AdminDashboard/ManageUsers";
+import AdminProfile from "../pages/Dashboard/AdminDashboard/AdminProfile";
+import TourGuideProfile from "../pages/Dashboard/TourGuideDashboard/TourGuideProfile";
+import TouristBookings from "../pages/Dashboard/UserDashboard/TouristBookings";
+import TouristWishlist from "../pages/Dashboard/UserDashboard/touristWishlist";
+import AddPackage from "../pages/Dashboard/AdminDashboard/AddPackage";
+import AdminRoute from "./AdminRoute";
 
 export const stories = [
   { id: '1', title: 'Story 1', summary: 'This is story 1', content: 'Full content of story 1' },
@@ -40,8 +46,9 @@ export const router = createBrowserRouter([
             element:<StoryDetailPage stories={stories}/>
         },
         {
-          path:'/package-details',
-          element:<PackageDetails/>
+          path:'/package-details/:id',
+          element:<PackageDetails/>,
+          loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/package/${params.id}`)
         }
       ]
     },
@@ -49,15 +56,37 @@ export const router = createBrowserRouter([
       path:"dashboard",
       element:<PrivatRoute><Dashboard/></PrivatRoute>,
       children:[
-        // normal routes
+        // Tourist routes
         {
           path:'touristprofile',
-          element:<Touristprofile/>
+          element:<PrivatRoute><Touristprofile/></PrivatRoute>
         },
         {
-          path:'manageusers',
-          element:<ManageUsers/>
+          path:'touristbookings',
+          element:<PrivatRoute><TouristBookings/></PrivatRoute>
         },
+        {
+          path:'wishlist',
+          element:<PrivatRoute><TouristWishlist/></PrivatRoute>
+        },
+        // Adsmin routes
+        {
+          path:'manageusers',
+          element:<PrivatRoute><ManageUsers/></PrivatRoute>
+        },
+        {
+          path:'addpackage',
+          element:<AdminRoute><AddPackage/></AdminRoute>
+        },
+        {
+          path:'adminprofile',
+          element:<PrivatRoute><AdminProfile/></PrivatRoute>
+        },
+        // Tour Guide routes
+        {
+          path:'guideprofile',
+          element:<PrivatRoute><TourGuideProfile/></PrivatRoute>
+        }
       ]
     }
     ])
