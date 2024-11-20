@@ -1,9 +1,13 @@
+import useUser from "../../../hooks/useUser";
+import Profile from "../Profile/Profile";
 
 
 const Touristprofile = () => {
+    const userinfo = useUser();
+
     return (
         <div>
-            user profile
+            <Profile userinfo={userinfo}/>
         </div>
     );
 };

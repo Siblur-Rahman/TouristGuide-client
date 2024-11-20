@@ -11,13 +11,16 @@ import SectionTitle from "../../components/SectionTitle";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useUser from "../../hooks/useUser";
+import Modal from "../../components/Modal";
 
 const PackageDetails = () => {
+    const [showModal, setShowModal] = useState(false)
+    
     const {user} = useAuth();
-    const {userInfo} = useUser();
+    const userinfo = useUser();
     const [startDate, setStartDate] = useState(new Date());
     const Navigate= useNavigate();
-    const {_id, packageType, tripTitle, price, tourInformation, tourPlan}= useLoaderData()
+    const {_id, tourType, tripTitle, price, tourInformation, tourPlan, images}= useLoaderData()
     const {
         register,
         handleSubmit,
@@ -27,7 +30,7 @@ const PackageDetails = () => {
     
       const onSubmit = async (data) => {
             const packageInfo = {
-                packageType:packageType,
+                tourType:tourType,
                 // tripTitle: data.tripTitle,
                 touristName:user?.displayName,
                 touristEmail:user?.email,
@@ -41,14 +44,15 @@ const PackageDetails = () => {
             const packageBooking = await axiosSecure.post('/booking', packageInfo);
 
             if(packageBooking.data.insertedId){
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: `Confirm your Booking”`,
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-                  Navigate('/')
+                setShowModal(true)
+                // Swal.fire({
+                //     position: "top-end",
+                //     icon: "success",
+                //     title: `Confirm your Booking”`,
+                //     showConfirmButton: false,
+                //     timer: 1500
+                //   });
+                //   Navigate('/')
             }
     }
         
@@ -56,42 +60,57 @@ const PackageDetails = () => {
        <>
             <SectionTitle heading={'Package Details'}/>
             <div>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="form-control w-ful my-6">
+            {showModal && <Modal tripTitle={tripTitle} onClose={()=>setShowModal(false)}/>}
+                <div className="grid grid-cols-2 grid-rows-2 gap-1 p-2">
+                    <img src={images?.image1} alt="" className="row-span-2 row-start-1 h-full" />
+                    <img src={images?.image2} alt="" className="" />
+                    <img src={images?.image3} alt="" className="" />
+                </div>
+                <div>
+                
+                
+                </div>
+                <div className="p-4">
+                    <h4 className='text-xl font-medium'>{tourType}</h4>
+                    <h4 className='text-lg text-emerald-800'>{tripTitle}</h4>
+                    {tourInformation}
+                </div>
+                <form onSubmit={handleSubmit(onSubmit)} className="border border-[#00BBA6] p-4 mt-5">
+                    <div className="form-control w-ful my-2">
                         <label className="label">
                             <span className="label-text">Tourist Name*</span>
                         </label>
                         <input defaultValue={user?.displayName} className="input input-bordered w-full" disabled />
                     </div>
-                    <div className="form-control w-ful my-6">
+                    <div className="form-control w-ful my-2">
                         <label className="label">
                             <span className="label-text">Tourist Email*</span>
                         </label>
                         <input defaultValue={user?.email} className="input input-bordered w-full" disabled/>
                     </div>
-                    <div className="form-control w-ful my-6">
+                    <div className="form-control w-ful my-2">
                         <label className="label">
                             <span className="label-text">Tourist Image URL*</span>
                         </label>
                         <input defaultValue={user?.photoURL} className="input input-bordered w-full" disabled />
                     </div>
-                    <div className="flex gap-6">
+                    <div className="flex gap-2">
                         {/* price */}
-                        <div className="w-1/3 my-6">
+                        <div className="w-1/3 my-2">
                             <label className="label">
                                 <span className="label-text">Price*</span>
                             </label>
                             <input  defaultValue={price} className="input input-bordered w-full text-red-800" {...register("price")}  disabled/>
                         </div>
                         {/* tour Date */}
-                        <div className="w-1/3 my-6">
+                        <div className="w-1/3 my-2">
                             <label className="label">
                                 <span className="label-text">Tour Date*</span>
                             </label>
                             <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className="input input-bordered" />
                         </div>
 
-                        <div className="w-1/3 my-6">
+                        <div className="w-1/3 my-2">
                             <label className="label">
                                 <span className="label-text">Tour Guide*</span>
                             </label>
@@ -104,7 +123,7 @@ const PackageDetails = () => {
                         </div>
                     </div>
                     {/* Submit */}
-                    <button className={`btn bg-orange-400 text-white ${userInfo?.role==='tourist'? '':'hidden'}`}>
+                    <button className={`btn btn-accent text-white ${userinfo?.role==='tourist' || 'hidden'}`}>
                         Book Now! <FaUtensils className="ml-3"/>
                     </button>
                 </form>

@@ -39,7 +39,7 @@ const Dashboard = () => {
     return (
         <div className="flex">
             {/*dashboard sidebar*/}
-            <div className="w-64 h-screen bg-orange-400">
+            <div className="w-64 h-[800px] bg-[#00BBA6]">
                 <ul className="menu p-4">
                     {
                        tourist &&
@@ -48,7 +48,7 @@ const Dashboard = () => {
                                     <FaHome />
                                     My Profile</NavLink>
                                 </li>
-                                <li><NavLink to="/dashboard/touristbookings">
+                                <li><NavLink to='/dashboard/touristbookings'>
                                     <FaList />
                                     My Booking</NavLink>
                                 </li>

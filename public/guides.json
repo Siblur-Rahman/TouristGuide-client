@@ -1,0 +1,163 @@
+[
+    {
+      "id": 1,
+      "name": "John Smith",
+      "image":"https://i.ibb.co.com/mcx948r/guide1.jpg",
+      "location": "New York, USA",
+      "languages": ["English", "Spanish"],
+      "experience_years": 8,
+      "specialties": ["City Tours", "Historical Landmarks"],
+      "rating": 4.8,
+      "contact": {
+        "email": "john.smith@example.com",
+        "phone": "+1-555-123-4567"
+      },
+      "availability": "Weekends",
+      "bio": "An experienced tour guide passionate about history and urban adventures."
+    },
+    {
+      "id": 2,
+      "name": "Maria Gonzalez",
+      "image":"https://i.ibb.co.com/99JbkY2/guide3.jpg",
+      "location": "Barcelona, Spain",
+      "languages": ["Spanish", "English", "Catalan"],
+      "experience_years": 5,
+      "specialties": ["Architecture", "Food Tours"],
+      "rating": 4.7,
+      "contact": {
+        "email": "maria.g@example.com",
+        "phone": "+34-555-987-6543"
+      },
+      "availability": "Weekdays",
+      "bio": "Loves sharing the beauty of Barcelona through its architecture and cuisine."
+    },
+    {
+      "id": 3,
+      "name": "Ali Khan",
+      "image":"https://i.ibb.co.com/F4zfB6J/guide2.jpg",
+      "location": "Istanbul, Turkey",
+      "languages": ["Turkish", "English", "Arabic"],
+      "experience_years": 10,
+      "specialties": ["Cultural Heritage", "Historical Sites"],
+      "rating": 4.9,
+      "contact": {
+        "email": "ali.khan@example.com",
+        "phone": "+90-555-123-6789"
+      },
+      "availability": "Flexible",
+      "bio": "A local guide with deep knowledge of Istanbul's rich cultural heritage."
+    },
+    {
+      "id": 4,
+      "name": "Sakura Tanaka",
+      "image":"https://i.ibb.co.com/99JbkY2/guide3.jpg",
+      "location": "Kyoto, Japan",
+      "languages": ["Japanese", "English"],
+      "experience_years": 6,
+      "specialties": ["Temple Tours", "Nature Walks"],
+      "rating": 4.6,
+      "contact": {
+        "email": "sakura.t@example.com",
+        "phone": "+81-555-234-5678"
+      },
+      "availability": "Evenings",
+      "bio": "Enjoys guiding visitors through Kyoto's serene temples and gardens."
+    },
+    {
+      "id": 5,
+      "name": "Ahmed Al-Farsi",
+      "image":"https://i.ibb.co.com/mcx948r/guide1.jpg",
+      "location": "Cairo, Egypt",
+      "languages": ["Arabic", "English"],
+      "experience_years": 12,
+      "specialties": ["Pyramids Tours", "Desert Safaris"],
+      "rating": 5.0,
+      "contact": {
+        "email": "ahmed.f@example.com",
+        "phone": "+20-555-678-1234"
+      },
+      "availability": "Mornings",
+      "bio": "A seasoned guide passionate about Egypt's ancient wonders."
+    },
+    {
+      "id": 6,
+      "name": "Emily Clarke",
+      "image":"https://i.ibb.co.com/99JbkY2/guide3.jpg",
+      "location": "Sydney, Australia",
+      "languages": ["English", "French"],
+      "experience_years": 7,
+      "specialties": ["Wildlife Tours", "Coastal Adventures"],
+      "rating": 4.5,
+      "contact": {
+        "email": "emily.c@example.com",
+        "phone": "+61-555-432-5678"
+      },
+      "availability": "Weekends",
+      "bio": "Loves introducing travelers to Australia's stunning natural landscapes."
+    },
+    {
+      "id": 7,
+      "name": "Carlos Rivera",
+      "image":"https://i.ibb.co.com/F4zfB6J/guide2.jpg",
+      "location": "Cusco, Peru",
+      "languages": ["Spanish", "English"],
+      "experience_years": 15,
+      "specialties": ["Machu Picchu Tours", "Hiking Expeditions"],
+      "rating": 4.9,
+      "contact": {
+        "email": "carlos.r@example.com",
+        "phone": "+51-555-123-4321"
+      },
+      "availability": "Flexible",
+      "bio": "Dedicated to helping travelers discover the beauty of the Andes."
+    },
+    {
+      "id": 8,
+      "name": "Priya Sharma",
+      "image":"https://i.ibb.co.com/99JbkY2/guide3.jpg",
+      "location": "Jaipur, India",
+      "languages": ["Hindi", "English"],
+      "experience_years": 9,
+      "specialties": ["Palace Tours", "Local Markets"],
+      "rating": 4.7,
+      "contact": {
+        "email": "priya.s@example.com",
+        "phone": "+91-555-345-6789"
+      },
+      "availability": "Afternoons",
+      "bio": "Specializes in showcasing Jaipur's royal heritage and vibrant culture."
+    },
+    {
+      "id": 9,
+      "name": "Liam O'Connor",
+      "image":"https://i.ibb.co.com/ggkZSKB/guide4.jpg",
+      "location": "Dublin, Ireland",
+      "languages": ["English", "Irish"],
+      "experience_years": 4,
+      "specialties": ["Pub Crawls", "Storytelling Tours"],
+      "rating": 4.6,
+      "contact": {
+        "email": "liam.o@example.com",
+        "phone": "+353-555-678-4321"
+      },
+      "availability": "Evenings",
+      "bio": "An energetic guide who brings Irish history and legends to life."
+    },
+    {
+      "id": 10,
+      "name": "Chen Wei",
+      "image":"https://i.ibb.co.com/ggkZSKB/guide4.jpg",
+      "location": "Beijing, China",
+      "languages": ["Mandarin", "English"],
+      "experience_years": 11,
+      "specialties": ["Forbidden City", "Great Wall Tours"],
+      "rating": 4.8,
+      "contact": {
+        "email": "chen.w@example.com",
+        "phone": "+86-555-789-1234"
+      },
+      "availability": "Flexible",
+      "bio": "Dedicated to providing authentic and insightful tours of China's landmarks."
+    }
+  ]
+  

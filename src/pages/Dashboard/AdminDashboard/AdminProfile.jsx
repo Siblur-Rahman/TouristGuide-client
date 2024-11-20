@@ -4,6 +4,7 @@ import Profile from "../Profile/Profile";
 
 const AdminProfile = () => {
     const userinfo = useUser();
+    console.log(userinfo)
     return (
         <div>
             <Profile userinfo={userinfo}/>

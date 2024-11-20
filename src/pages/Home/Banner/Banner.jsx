@@ -24,7 +24,7 @@ const Banner = () => {
     }
   ]
   return (
-    <div className="py-10 hover:opacity-40 relative">
+    <div className="py-10 hover:opacity-70 relative">
       <Swiper
     modules={[Navigation, Pagination, Scrollbar, A11y]}
     spaceBetween={50}

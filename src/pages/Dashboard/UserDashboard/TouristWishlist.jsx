@@ -75,7 +75,7 @@ const TouristWishlist = () => {
                 </div>
             </td> */}
               <td>
-                {pack?.packageType}
+                {pack?.tourType}
               </td>
               <td>
                 {pack?.price}

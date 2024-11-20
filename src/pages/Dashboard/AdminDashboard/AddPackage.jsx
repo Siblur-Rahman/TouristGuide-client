@@ -27,7 +27,7 @@ const AddPackage = () => {
         })
         if(res.data.success){
             const packageInfo = {
-                packageType:data.packageType,
+                tourType:data.tourType,
                 tripTitle: data.tripTitle,
                 price:data.price,
                 tourInformation:data.tourInformation,
@@ -38,65 +38,42 @@ const AddPackage = () => {
                 image: res.data.data.display_url
             }
             
-            // const menuRes = await axiosSecure.post('/package', packageInfo);
-            // console.log(menuRes.data)
-            // if(menuRes.data.insertedId){
             const packageRes = await axiosSecure.post('/package', packageInfo);
             console.log(packageRes.data)
             if(packageRes.data.insertedId){
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `${data.packageType} is added to the Package`,
+                    title: `${data.tourType} is added to the Package`,
                     showConfirmButton: false,
                     timer: 1500
                   });
                   reset()
             }
         }
-        //  const packageInfo = {
-        //         packageType:data.packageType,
-        //         tripTitle: data.tripTitle,
-        //         price:data.price,
-        //         tourInformation:data.tourInformation,
-        //     }
-            
-        //     const packageRes = await axiosSecure.post('/package', packageInfo);
-        //     console.log(packageRes.data)
-        //     if(packageRes.data.insertedId){
-        //         Swal.fire({
-        //             position: "top-end",
-        //             icon: "success",
-        //             title: `${data.name} is added to the menu`,
-        //             showConfirmButton: false,
-        //             timer: 1500
-        //           });
-        //           reset()
-        //     }
-        // console.log(res.data)
     }
         
       return (
-       <>
+       <div className="h-[800px] flex-col justify-center items-center relative">
             <SectionTitle heading={'Add a Package'} subHeading={"What's New?"}/>
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="form-control w-ful my-6">
+                    <div className="form-control w-ful my-2">
                         <label className="label">
                             <span className="label-text">package Type*</span>
                         </label>
-                        <input placeholder="Package Type" className="input input-bordered w-full" {...register("packageType")} />
+                        <input placeholder="Package Type" className="input input-bordered w-full" {...register("tourType")} />
                     </div>
                     <div className="flex gap-6">
                         {/* tripTitle */}
-                        <div className="w-1/2 my-6">
+                        <div className="w-1/2 my-2">
                             <label className="label">
                                 <span className="label-text">Trip Title*</span>
                             </label>
                             <input placeholder="Trip Title" className="input input-bordered w-full" {...register("tripTitle")} />
                         </div>
                         {/* price */}
-                        <div className="w-1/2 my-6">
+                        <div className="w-1/2 my-2">
                             <label className="label">
                                 <span className="label-text">Price*</span>
                             </label>
@@ -119,15 +96,15 @@ const AddPackage = () => {
                         <textarea {...register("day2")} className="textarea textarea-bordered min-h-4" placeholder="2Day Plan*"></textarea>
                     </div>  
                     <div>
-                        <input {...register('image', {required: true})} type="file" className="file-input w-full max-w-xs my-6" />
+                        <input {...register('image', {required: true})} type="file" className="file-input w-full max-w-xs my-2" />
                     </div>
                     {/* Submit */}
-                    <button className="btn bg-orange-400 text-white">
+                    <button className="btn bg-accent">
                         Add Package <FaUtensils className="ml-3"/>
                     </button>
                 </form>
             </div>
-       </>
+       </div>
       )
 };
 

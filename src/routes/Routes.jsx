@@ -16,6 +16,10 @@ import TouristBookings from "../pages/Dashboard/UserDashboard/TouristBookings";
 import TouristWishlist from "../pages/Dashboard/UserDashboard/touristWishlist";
 import AddPackage from "../pages/Dashboard/AdminDashboard/AddPackage";
 import AdminRoute from "./AdminRoute";
+import GuideBooking from "../pages/Dashboard/TourGuideDashboard/GuideBooking";
+import AllPackages from "../pages/AllPackages/AllPackages";
+import PackageType from "../pages/PackageType/PackageType";
+import TouristGuideDetails from "../pages/TouristGuideDetails/TouristGuideDetails";
 
 export const stories = [
   { id: '1', title: 'Story 1', summary: 'This is story 1', content: 'Full content of story 1' },
@@ -49,7 +53,19 @@ export const router = createBrowserRouter([
           path:'/package-details/:id',
           element:<PackageDetails/>,
           loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/package/${params.id}`)
-        }
+        },
+      {
+        path:'/allpack',
+        element:<AllPackages/>
+      },
+      {
+        path:'/packageType/:type',
+        element:<PackageType/>
+      },
+      {
+        path:'/guideDetails/:email',
+        element:<TouristGuideDetails/>
+      }
       ]
     },
     {
@@ -58,12 +74,12 @@ export const router = createBrowserRouter([
       children:[
         // Tourist routes
         {
-          path:'touristprofile',
+          path:'/dashboard/touristprofile',
           element:<PrivatRoute><Touristprofile/></PrivatRoute>
         },
         {
-          path:'touristbookings',
-          element:<PrivatRoute><TouristBookings/></PrivatRoute>
+          path:'/dashboard/touristbookings',
+          element:<TouristBookings/>,
         },
         {
           path:'wishlist',
@@ -86,6 +102,10 @@ export const router = createBrowserRouter([
         {
           path:'guideprofile',
           element:<PrivatRoute><TourGuideProfile/></PrivatRoute>
+        },
+        {
+          path:'guidebooking',
+          element:<PrivatRoute><GuideBooking/></PrivatRoute>
         }
       ]
     }

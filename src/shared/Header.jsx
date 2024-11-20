@@ -15,18 +15,19 @@ const Header = () => {
             .catch(error => console.log(error));
             navigate('/');
     }
-        const navLink =<>
-            <li><NavLink to="/" >Home</NavLink></li>
-            <li><NavLink to="/Community" >Community</NavLink></li>
-            <li><NavLink to="/Contact Us," >Contact Us</NavLink></li>
+    const navLink =<>
+            <li><NavLink to="/" className={'lg:text-white uppercase text-xl'} >Home</NavLink></li>
+            <li><NavLink to="/Community" className={'lg:text-white uppercase text-xl'} >Community</NavLink></li>
+            <li><NavLink to="/Community" className={'lg:text-white uppercase text-xl'} >Blogs</NavLink></li>
+            <li><NavLink to="/Contact Us," className={'lg:text-white uppercase text-xl'} >Contact Us</NavLink></li>
             {!user && <>
-                <li><NavLink to="/login" >Login</NavLink></li>
-                 <li><NavLink to="/signup" >Register</NavLink></li>
+                <li><NavLink to="/login"  className={'lg:text-white uppercase text-xl'}>Login</NavLink></li>
+                 <li><NavLink to="/signup"  className={'lg:text-white uppercase text-xl'}>Register</NavLink></li>
             </>}
             </>
     return (
 
-            <div className="navbar">
+            <div className="navbar bg-[#2485B0] rounded-md">
                 <div className="navbar-start">
                     <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -36,7 +37,7 @@ const Header = () => {
                         {navLink}
                     </ul>
                     </div>
-                    <NavLink to="/" className="btn btn-ghost text-xl">Touris Guide</NavLink>
+                    <NavLink to="/" className="text-xl uppercase">Touris <span className="text-[#e05429]">Guide</span></NavLink>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

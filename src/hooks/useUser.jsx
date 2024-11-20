@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
-import useAxiosSecure from "./useAxiosSecure";
 import useAuth from "./useAuth";
+import useAxiosSecure from "./useAxiosSecure";
 
 const useUser = () => {
-    const {user} = useAuth();
-    const [userinfo, setUserinfo] = useState({})
+    const {user}= useAuth()
+    const [userinfo, setUserInfo] = useState();
     const axiosSecure = useAxiosSecure();
-useEffect(()=>{
-    axiosSecure.get(`/userinfo/${user.email}`)
-    .then(res=>{
-        setUserinfo(res?.data)
+    useEffect(()=>{
+        axiosSecure.get(`/userinfo/${user?.email}`)
+        .then(res=>setUserInfo(res?.data))
     })
-},[user])
 return userinfo
 };
 
