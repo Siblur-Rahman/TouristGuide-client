@@ -74,7 +74,7 @@ const PackageCard = ({pack}) => {
     <div className="package-card w-full p-4 mb-6">
       <div className="flex-col justify-center items-center w-full">
         <div className='package-image relative w-full'>
-        <img src={pack?.images?.image1 || 'https://img.freepik.com/premium-vector/travel-social-media-post-template-travel-holiday-vacation-social-media-post-banner-square-flyer_1104745-354.jpg?w=740'} className='h-[400px]' alt={tourType} />
+        <img src={pack?.images?.image1 || 'https://img.freepik.com/premium-vector/travel-social-media-post-template-travel-holiday-vacation-social-media-post-banner-square-flyer_1104745-354.jpg?w=740'} className='h-[400px] w-full' alt={tourType} />
         <h4 className='absolute top-1 bg-slate-50 m-2 rounded-3xl px-4 py-1 text-xl font-semibold'>${price}</h4>
           <div className='absolute left-2 right-2 bottom-2 bg-slate-200 mx-auto rounded-lg'>
             <h4 className='text-xl pl-2 font-medium'>{tourType}</h4>

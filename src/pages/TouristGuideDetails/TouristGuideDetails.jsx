@@ -20,11 +20,16 @@ const TouristGuideDetails = () => {
       alt={guide?.name} />
   </figure>
   <div className="card-body">
-    <h2 className="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
+    <h2 className="card-title">{guide?.name}</h2>
+    <div className="flex justify-between">
+      <span className="text-[#00BBA6] text-xl">{guide?.contact?.email}</span>
+      <span className="text-[#00BBA6] text-xl">{guide?.contact?.phone}</span>
     </div>
+    <div className="flex justify-between">
+      <span className=" text-xl"><span className="text-[#00BBA6]">experience_years:</span> {guide?.experience_years}</span>
+      <span className="text-xl"><span className="text-[#00BBA6]" >Rating: </span>{guide?.rating}</span>
+    </div>
+    <p>{guide?.bio}</p>
   </div>
 </div>
     );

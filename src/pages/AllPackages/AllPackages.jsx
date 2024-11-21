@@ -1,13 +1,13 @@
-import usePackages from "../../hooks/usePackages";
+import usePublickData from "../../hooks/usePublickData";
 import PackageCard from "../Home/GuideSection/PackageCard";
 
 
 const AllPackages = () => {
-  const [packages] = usePackages();
+  const [publicData] = usePublickData('/packages')
     return (
         <div className="">
             <div className="package-cards lg:flex">
-              {packages?.map((pack, index) => <div key={index} className='lg:w-[30%] md:w-full sm:w-full mx-auto'>
+              {publicData?.map((pack, index) => <div key={index} className='lg:w-[30%] md:w-full sm:w-full mx-auto'>
               <PackageCard
                 pack={pack} 
               />

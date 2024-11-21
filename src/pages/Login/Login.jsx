@@ -1,6 +1,5 @@
-import { useContext, useEffect, useState } from 'react';
+import {useEffect, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
-import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -9,7 +8,7 @@ import useAuth from '../../hooks/useAuth';
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation()
-    const [disabled, setDisabled] = useState(false)
+    const [disabled, setDisabled] = useState(true)
     const {signIn} = useAuth();
 
     const from = location.state?.from?.pathname || "/";
@@ -98,7 +97,7 @@ const Login = () => {
                     <input onBlur={handleValidateCaptcha} type="text" name="captcha" placeholder="type the Captcha above" className="input input-bordered" />
                     </div>
                     <div className="form-control mt-6">
-                    <input disabled={disabled} type="submit" className="btn btn-primary" value={"Login"}/>
+                    <input disabled={disabled} type="submit" className="btn btn-accent" value={"Login"}/>
                     </div>
                 </form>
                 <p className='px-6'>Are You Here New?</p>

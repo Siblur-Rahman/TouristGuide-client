@@ -20,13 +20,8 @@ import GuideBooking from "../pages/Dashboard/TourGuideDashboard/GuideBooking";
 import AllPackages from "../pages/AllPackages/AllPackages";
 import PackageType from "../pages/PackageType/PackageType";
 import TouristGuideDetails from "../pages/TouristGuideDetails/TouristGuideDetails";
+import AllStories from './../pages/Home/AllStories/AllStories';
 
-export const stories = [
-  { id: '1', title: 'Story 1', summary: 'This is story 1', content: 'Full content of story 1' },
-  { id: '2', title: 'Story 2', summary: 'This is story 2', content: 'Full content of story 2' },
-  { id: '3', title: 'Story 3', summary: 'This is story 3', content: 'Full content of story 3' },
-  { id: '4', title: 'Story 4', summary: 'This is story 4', content: 'Full content of story 4' },
-];
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -46,14 +41,19 @@ export const router = createBrowserRouter([
           element:<Login/>
         },
         {
+            path: "/allstories",
+            element:<AllStories/>
+        },
+        {
             path: "/stories/:id",
-            element:<StoryDetailPage stories={stories}/>
+            element:<StoryDetailPage/>
         },
         {
           path:'/package-details/:id',
           element:<PackageDetails/>,
           loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/package/${params.id}`)
         },
+
       {
         path:'/allpack',
         element:<AllPackages/>

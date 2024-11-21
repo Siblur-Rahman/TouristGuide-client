@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --Color:#00BBA6;
+}
 
 .slick-slide> div {
     margin:  0 10px;

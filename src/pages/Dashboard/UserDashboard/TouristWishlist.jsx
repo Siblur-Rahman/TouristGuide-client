@@ -1,43 +1,46 @@
-import useWishList from "../../../hooks/useWishList";
+// import useWishList from "../../../hooks/useWishList";
 
 
 import { FaTrashAlt } from "react-icons/fa";
-import Swal from "sweetalert2";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useDelete from "../../../hooks/useDelete";
+// import Swal from "sweetalert2";
+// import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useWishList from './../../../hooks/useWishList';
 
 
 const TouristWishlist = () => {
+  const [Delete] = useDelete();
+    const [wishPackage, refetch] = useWishList();
+    // const [wishPackage, refetch] = useWishList();
 
-    const [wishPackage, refetch] = useWishList()
+    // const axiosSecure = useAxiosSecure();
 
-    const axiosSecure = useAxiosSecure();
-
-    const handleDelete = (id) =>{
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-          }).then((result) => {
-            if (result.isConfirmed) {
-                axiosSecure.delete(`/wishPackage/${id}`)
-                .then(res =>{
-                    console.log(res)
-                    if(res.data.deletedCount > 0){
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "Your file has been deleted.",
-                            icon: "success"
-                          });
-                          refetch();
-                    }
-                })
-            }
-          });
-    }
+    // const handleDelete = (id) =>{
+    //     Swal.fire({
+    //         title: "Are you sure?",
+    //         text: "You won't be able to revert this!",
+    //         icon: "warning",
+    //         showCancelButton: true,
+    //         confirmButtonColor: "#3085d6",
+    //         cancelButtonColor: "#d33",
+    //         confirmButtonText: "Yes, delete it!"
+    //       }).then((result) => {
+    //         if (result.isConfirmed) {
+    //             axiosSecure.delete(`/wishPackage/${id}`)
+    //             .then(res =>{
+    //                 console.log(res)
+    //                 if(res.data.deletedCount > 0){
+    //                     Swal.fire({
+    //                         title: "Deleted!",
+    //                         text: "Your file has been deleted.",
+    //                         icon: "success"
+    //                       });
+    //                       refetch();
+    //                 }
+    //             })
+    //         }
+    //       });
+    // }
     return (
     <div>
         <div className="flex justify-evenly">
@@ -81,7 +84,7 @@ const TouristWishlist = () => {
                 {pack?.price}
               </td>
               <th>
-                <button onClick={()=>handleDelete(pack?._id)} className="btn btn-ghost btn-xs">
+                <button onClick={()=>Delete(`/wishPackage/${pack?._id}`, refetch)} className="btn btn-ghost btn-xs">
                     <FaTrashAlt/>
                 </button>
               </th>

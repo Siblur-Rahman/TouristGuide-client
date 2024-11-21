@@ -1,5 +1,6 @@
 
 
+import img from '../../../assets/images/Banner/banner.png'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import PackageCard from './PackageCard';
@@ -37,7 +38,7 @@ const TourismGuideTabs = () => {
           <div className="overview-tab" >
             <h3>Discover Amazing Destinations</h3>
             <p>Experience unique and unforgettable moments around the globe.</p>
-            <div className='bg-img'>
+            <div className=''>
               <video width="100%" className='h-[500px]' controls>
                 <source src={`${video}`} type="video/mp4" />
                 Your browser does not support the video tag.
