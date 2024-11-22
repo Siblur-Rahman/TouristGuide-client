@@ -1,13 +1,13 @@
 
-import usePublickData from "../../hooks/usePublickData";
 
 import PackageCardForCommunityPage from "./PackageCardForCommunityPage";
 
 import SectionTitle from "../../components/SectionTitle";
+import usePublicData from "../../hooks/usePublickData";
 
 
 const CommutyPage = () => {
-    const [publicData]= usePublickData('/packages');
+    const [publicData]= usePublicData('/packages');
         
       return (
        <div className="flex-col justify-center items-center relative">

@@ -56,11 +56,11 @@ const Dashboard = () => {
                                     <FaList />
                                     My Wishlist</NavLink>
                                 </li>
-                                <li>
+                                <li className="my-1">
                                         <button 
                                         onClick={()=>handleRequest(tourist)} 
                                         disabled={tourist?.request}
-                                        className="mybtn btn-xs">
+                                        className="mybtn">
                                             {
                                                 tourist?.request? 'Requested' : 'Request to be Tour Guide'
                                             }

@@ -1,18 +1,12 @@
-import { useEffect, useState } from "react";
-import useAuth from "../../../hooks/useAuth";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import MyBookingCard from "./myBookingCard";
+import useBookingList from "../../../hooks/useBookingList";
 
 const TouristBookings = () => {
-    const {user} = useAuth();
-    const [packages, setPackages] = useState();
-    const axiosSecure = useAxiosSecure();
-    useEffect(()=>{
-        axiosSecure.get(`/booking/${user?.email}`)
-        .then(res=>setPackages(res.data))
-    },[user])
+  const [bookingPackage, refetch] = useBookingList()
+
     return (
         <div>
+          {/* {secureData?.length} */}
               <table className="table">
     {/* head */}
     <thead>
@@ -30,7 +24,7 @@ const TouristBookings = () => {
       </tr>
     </thead>
     <tbody>
-            {packages?.map((pack, index)=><MyBookingCard key={index} index={index} bookingPack={pack}/>)}
+            {bookingPackage?.map((pack, index)=><MyBookingCard key={index} index={index} bookingPack={pack} refetch={refetch}/>)}
             </tbody>
    
    </table>

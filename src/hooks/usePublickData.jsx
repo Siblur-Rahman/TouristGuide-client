@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "./useAxiosPublic";
 
-const usePublickData = (api) =>{
+const usePublicData = (api) =>{
 
     const axiosPublic = useAxiosPublic();
 
@@ -16,4 +16,4 @@ const usePublickData = (api) =>{
 return [publicData, loading, refetch]
 }
 
-export default usePublickData;
+export default usePublicData;

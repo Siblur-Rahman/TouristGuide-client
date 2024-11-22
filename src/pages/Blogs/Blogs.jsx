@@ -1,11 +1,12 @@
-import usePublickData from "../../hooks/usePublickData";
+import usePublicData from "../../hooks/usePublickData";
+import BlogCard from "./BlogCard";
 
 
 const Blogs = () => {
-    const [publicData]= usePublickData('/blogs')
+    const [publicData]= usePublicData('/blogs')
     return (
         <div>
-            {publicData?.map((blog, index)=><div key={index}>{blog?._id}</div>)}
+            {publicData?.map((blog, index)=><BlogCard key={index} blog={blog}></BlogCard>)}
         </div>
     );
 };

@@ -1,4 +1,3 @@
-// import usePublickData from "../../hooks/usePublickData";
 
 import { useEffect, useState } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";

@@ -1,10 +1,10 @@
-import usePublickData from "../../hooks/usePublickData";
+import usePublicData from "../../hooks/usePublickData";
 import PackageCard from "../Home/GuideSection/PackageCard";
 import SectionTitle from './../../components/SectionTitle';
 
 
 const AllPackages = () => {
-  const [publicData] = usePublickData('/packages')
+  const [publicData] = usePublicData('/packages')
     return (
         <div className="">
           <SectionTitle heading={'All Package'}/>

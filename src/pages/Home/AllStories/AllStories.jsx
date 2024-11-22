@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import SectionTitle from "../../../components/SectionTitle";
-import usePublickData from "../../../hooks/usePublickData";
+import usePublicData from "../../../hooks/usePublickData";
 
 const AllStories = () => {
-    const [publicData] = usePublickData('/stories')
+    const [publicData] = usePublicData('/stories')
     return (
         <div>
     <SectionTitle heading={'All Stories'}/>

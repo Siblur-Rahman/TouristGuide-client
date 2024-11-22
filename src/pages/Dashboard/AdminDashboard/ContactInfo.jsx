@@ -1,8 +1,8 @@
 import { FaEnvelope, FaUserAlt } from "react-icons/fa";
-import usePublickData from "../../../hooks/usePublickData";
+import usePublicData from './../../../hooks/usePublickData';
 
 const ContactInfo = () => {
-    const [publicData] = usePublickData('/contacts')
+    const [publicData] = usePublicData('/contacts')
     return (
         <div>
             {publicData?.map((mess, index)=>

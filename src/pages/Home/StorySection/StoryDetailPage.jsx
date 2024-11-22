@@ -2,10 +2,10 @@
 import { FacebookShareButton, FacebookIcon } from 'react-share';
 import { useParams, Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import usePublickData from '../../../hooks/usePublickData';
+import usePublicData from '../../../hooks/usePublickData';
 
 const StoryDetailPage = () => {
-  const [publicData]= usePublickData('/stories4')
+  const [publicData]= usePublicData('/stories4')
   const { id } = useParams();
   const story = publicData?.find((story) => story?._id === id);
   const {user} = useAuth();
