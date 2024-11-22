@@ -1,10 +1,13 @@
 import {useLocation, useNavigate } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
-import useAuth from '../../../hooks/useAuth';
-import useAxiosSecure from '../../../hooks/useAxiosSecure';
-import Swal from 'sweetalert2';
 
-const PackageCard = ({pack}) => {
+import Swal from 'sweetalert2';
+import useAuth from '../../hooks/useAuth';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
+import FormForCommunityPage from './FormForCommunityPage';
+import Comments from './Comments';
+
+const PackageCardForCommunityPage = ({pack}) => {
   const {user} = useAuth();
   const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
@@ -71,7 +74,7 @@ const PackageCard = ({pack}) => {
   };
 
   return (
-    // <div className="p-4 mb-6">
+    <div className="p-4 mb-6">
       <div className="flex-col justify-center items-center w-full">
         <div className='package-image relative w-full'>
         <img src={pack?.images?.image1 || 'https://img.freepik.com/premium-vector/travel-social-media-post-template-travel-holiday-vacation-social-media-post-banner-square-flyer_1104745-354.jpg?w=740'} className='h-[400px] w-full' alt={tourType} />
@@ -85,8 +88,10 @@ const PackageCard = ({pack}) => {
         </div>
         <button onClick={()=>viewPackage(_id)} className='mybtn text-sm mt-5 mb-2'>View Package</button>
       </div>
-    // </div>
+      <FormForCommunityPage pack={pack}/>
+      <Comments pack={pack}/>
+     </div>
   );
 };
 
-export default PackageCard;
+export default PackageCardForCommunityPage;

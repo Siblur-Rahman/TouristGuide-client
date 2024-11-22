@@ -16,11 +16,15 @@ import TouristBookings from "../pages/Dashboard/UserDashboard/TouristBookings";
 import TouristWishlist from "../pages/Dashboard/UserDashboard/touristWishlist";
 import AddPackage from "../pages/Dashboard/AdminDashboard/AddPackage";
 import AdminRoute from "./AdminRoute";
-import GuideBooking from "../pages/Dashboard/TourGuideDashboard/GuideBooking";
 import AllPackages from "../pages/AllPackages/AllPackages";
 import PackageType from "../pages/PackageType/PackageType";
 import TouristGuideDetails from "../pages/TouristGuideDetails/TouristGuideDetails";
 import AllStories from './../pages/Home/AllStories/AllStories';
+import CommunityPage from "../pages/CommutyPage/CommutyPage";
+import Blogs from "../pages/Blogs/Blogs";
+import ContactUs from "../pages/ContactUs/ContactUs";
+import ContactInfo from "../pages/Dashboard/AdminDashboard/ContactInfo";
+import Assigned from "../pages/Dashboard/TourGuideDashboard/Assigned";
 
 export const router = createBrowserRouter([
     {
@@ -39,6 +43,10 @@ export const router = createBrowserRouter([
         {
           path:'/login',
           element:<Login/>
+        },
+        {
+          path:'/contactus',
+          element:<ContactUs/>
         },
         {
             path: "/allstories",
@@ -65,6 +73,14 @@ export const router = createBrowserRouter([
       {
         path:'/guideDetails/:email',
         element:<TouristGuideDetails/>
+      },
+      {
+        path:'/communitypage',
+        element:<CommunityPage/>
+      },
+      {
+        path:'blogs',
+        element:<Blogs/>
       }
       ]
     },
@@ -104,8 +120,12 @@ export const router = createBrowserRouter([
           element:<PrivatRoute><TourGuideProfile/></PrivatRoute>
         },
         {
-          path:'guidebooking',
-          element:<PrivatRoute><GuideBooking/></PrivatRoute>
+          path:'assigned',
+          element:<PrivatRoute><Assigned/></PrivatRoute>
+        },
+        {
+          path:'contacts',
+          element:<ContactInfo/>
         }
       ]
     }

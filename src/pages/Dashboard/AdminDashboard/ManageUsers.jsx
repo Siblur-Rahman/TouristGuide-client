@@ -83,7 +83,7 @@ const ManageUsers = () => {
                         <button 
                         onClick={()=>handleRoleAdmin(user)}
                         disabled = {user?.role==='admin' || user?.role === 'tourguide'}
-                        className="btn btn-ghost bg-orange-300 btn-xs">
+                        className="mybtn btn-xs">
                             <FaUser className="text-white text-2xl"/>
                             Make Admin
                         </button>
@@ -92,7 +92,7 @@ const ManageUsers = () => {
                         <button 
                         onClick={()=>handleRoleGuide(user)} 
                         disabled = {!user?.request || (user?.role ==='admin' || user?.role ==='tourguide')}
-                        className="btn btn-ghost bg-orange-300 btn-xs flex">
+                        className="mybtn btn-xs flex">
                             <FaUser className="text-white text-2xl"/>
                             <span> Make Guide</span>
                         </button>

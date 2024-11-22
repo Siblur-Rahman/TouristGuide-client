@@ -5,8 +5,8 @@
         "price": 150,
         "tourInformation": "Join our Mountain Hiking Expedition and experience the adventure of a lifetime! This package is perfect for nature enthusiasts and thrill-seekers looking to challenge themselves while surrounded by breathtaking mountain views. Our expedition is suitable for all skill levels, from beginners to experienced hikers. You’ll be guided by experienced professionals who prioritize safety and ensure an enjoyable journey. Along the way, discover diverse flora and fauna, serene landscapes, and hidden viewpoints. The package includes all necessary hiking gear, nutritious meals, and refreshments to keep your energy levels high. You can choose between a one-day trek to the summit or a two-day adventure with an overnight camping experience. On the two-day trip, enjoy a night under the stars with campfire meals and stories. Our team is committed to making your hiking experience comfortable and memorable. Whether you are traveling solo, with friends, or with family, this adventure guarantees cherished memories and a sense of accomplishment. Immerse yourself in nature, disconnect from the busy world, and challenge your limits. Don't miss the opportunity to conquer the peaks and create stories worth sharing. Book your spot today and prepare for an unforgettable hiking journey!",
         "tourPlan": {
-          "1Day": "Summit hike and return by afternoon.",
-          "2Days": "Day 1: Mid-point trek and camping. Day 2: Summit hike and descend."
+          "day1": "Summit hike and return by afternoon.",
+          "days2": "Day 1: Mid-point trek and camping. Day 2: Summit hike and descend."
         },
         "images":{
             "image1":"https://i.ibb.co.com/bz0MB63/Adventure1.jpg",
@@ -20,8 +20,8 @@
         "price": 120,
         "tourInformation": "Dive into the thrilling world of white-water rafting with our River Rafting Adventure package. Designed for adrenaline junkies and nature lovers alike, this experience combines excitement with scenic beauty. Raft through challenging rapids as you navigate winding rivers surrounded by lush greenery and rugged cliffs. Whether you’re a seasoned rafter or a beginner, our expert guides will provide detailed safety instructions and ensure a safe, exhilarating journey. The package includes top-quality safety gear, including helmets, life jackets, and paddles. After the adventure, enjoy a delicious riverside meal while soaking in the serene ambiance. Opt for a one-day rafting experience for a quick adventure or a two-day package to explore nearby waterfalls and trails. On the two-day trip, camp by the river, enjoy a cozy bonfire, and share stories with fellow adventurers. This package is perfect for families, friends, or solo travelers seeking an unforgettable adventure. Get ready to embrace the rush of the rapids, conquer your fears, and create lasting memories. Whether you’re looking to bond with loved ones or meet fellow adventure enthusiasts, this rafting trip promises an unparalleled experience. Don’t wait – book your River Rafting Adventure today!",
         "tourPlan": {
-          "1Day": "Morning rafting and lunch. Evening relaxation at riverside.",
-          "2Days": "Day 1: Rafting adventure. Day 2: Explore nearby waterfalls."
+          "day1": "Morning rafting and lunch. Evening relaxation at riverside.",
+          "days2": "Day 1: Rafting adventure. Day 2: Explore nearby waterfalls."
         },
         "images":{
             "image1":"https://i.ibb.co.com/bz0MB63/Adventure1.jpg",
@@ -35,8 +35,8 @@
         "price": 100,
         "tourInformation": "Step back in time and immerse yourself in the rich cultural history of our heritage city. This tour is designed for history enthusiasts and curious travelers who wish to explore the architectural marvels, ancient traditions, and vibrant markets of the city. Our expert guides will lead you through historical landmarks, providing fascinating stories and insights about their significance. Enjoy the charm of traditional streets lined with local crafts and cuisines that offer a glimpse into the city’s soul. Choose a one-day tour to cover the must-see sites or a two-day experience to delve deeper into the city’s culture. On the two-day tour, participate in cultural workshops, witness traditional performances, and learn the art of local crafts. Whether you’re traveling solo, with family, or in a group, this heritage tour is perfect for anyone looking to connect with the past. Capture stunning photographs, enjoy authentic meals, and create memories that last a lifetime. This experience is a perfect blend of education, exploration, and entertainment. Don’t miss out on this enriching journey through history – book your Heritage City Tour today and step into a world where the past meets the present!",
         "tourPlan": {
-          "1Day": "Explore key heritage sites and enjoy cultural performances.",
-          "2Days": "Day 1: Visit historical landmarks. Day 2: Attend workshops and local festivals."
+          "day1": "Explore key heritage sites and enjoy cultural performances.",
+          "days2": "Day 1: Visit historical landmarks. Day 2: Attend workshops and local festivals."
         },
         "images":{
             "image1":"https://i.ibb.co.com/bz0MB63/Adventure1.jpg",
@@ -50,8 +50,8 @@
         "price": 250,
         "tourInformation": "Escape to a tropical paradise with our exclusive Island Getaway package. This experience is designed for travelers seeking relaxation and adventure in equal measure. Bask in the golden sunshine, swim in turquoise waters, and walk along pristine beaches. The package offers opportunities for water sports such as snorkeling, jet skiing, and kayaking for adventure lovers, while tranquil beachside lounging awaits those looking to unwind. Choose between a one-day escape that offers a quick retreat or a two-day adventure packed with activities and island exploration. During the two-day stay, enjoy a cozy beachfront accommodation, indulge in seafood delicacies, and embark on an island-hopping tour to discover hidden gems. Watch the sunset paint the sky with vibrant hues and stargaze at night by a bonfire. This package is perfect for couples, families, or solo travelers looking to reconnect with nature. Let the ocean breeze soothe your soul, and leave your worries behind. Whether you’re celebrating a special occasion or simply taking a well-deserved break, this getaway promises to rejuvenate and refresh. Book your Tropical Island Getaway today and experience the magic of paradise!",
         "tourPlan": {
-          "1Day": "Morning beach activities and sunset cruise.",
-          "2Days": "Day 1: Beach fun and water sports. Day 2: Snorkeling and island tour."
+          "day1": "Morning beach activities and sunset cruise.",
+          "days2": "Day 1: Beach fun and water sports. Day 2: Snorkeling and island tour."
         },
         "images":{
             "image1":"https://i.ibb.co.com/Lpk3HPs/beach1.jpg",
@@ -65,8 +65,8 @@
         "price": 200,
         "tourInformation": "Immerse yourself in the wonders of nature with our thrilling Jungle Safari Adventure. This package is perfect for wildlife enthusiasts and photography lovers looking to explore the untamed beauty of the jungle. Embark on a guided safari to spot exotic animals in their natural habitat, including majestic tigers, graceful deer, and colorful birds. The experience is enhanced by our expert naturalists, who provide insights about the flora and fauna, making this journey educational and exciting. The package includes jeep safaris, meals, and binoculars for better viewing. Choose a one-day adventure for a quick escape into the wild or a two-day experience to dive deeper into the jungle's mysteries. On the two-day trip, enjoy a peaceful stay at a jungle lodge, participate in night safaris, and listen to the symphony of nature under the starry sky. Whether you’re an adventure enthusiast, a nature lover, or simply looking to disconnect from city life, this safari promises unforgettable memories and breathtaking sights. Don’t forget your camera to capture the magic of the wild! Book your Jungle Safari Adventure now and embark on a journey to connect with the natural world like never before.",
         "tourPlan": {
-          "1Day": "Morning safari and lunch. Afternoon nature walk.",
-          "2Days": "Day 1: Safari and jungle lodge stay. Day 2: Birdwatching and night safari."
+          "day1": "Morning safari and lunch. Afternoon nature walk.",
+          "days2": "Day 1: Safari and jungle lodge stay. Day 2: Birdwatching and night safari."
         },
         "images":{
             "image1":"https://i.ibb.co.com/bz0MB63/Adventure1.jpg",
@@ -80,8 +80,8 @@
         "price": 500,
         "tourInformation": "Experience the epitome of relaxation and indulgence with our Private Island Retreat. This exclusive package is designed for travelers seeking privacy, luxury, and serenity all in one. Nestled in the heart of a tropical paradise, the private island offers stunning vistas, pristine beaches, and world-class amenities. From luxurious villas to personalized services, every detail is tailored to make your stay unforgettable. Spend your days lounging by the beach, indulging in spa treatments, or exploring the island through guided nature walks. For adventure seekers, enjoy water sports like snorkeling and paddleboarding. Choose a one-day package for a quick escape or a two-day retreat to truly unwind and recharge. On the two-day trip, savor gourmet dining under the stars, take a sunset yacht cruise, and wake up to the sound of gentle waves. This package is ideal for couples celebrating a special occasion, families looking for an exclusive getaway, or individuals seeking solitude in paradise. Whether you're looking to relax or explore, this retreat offers something for everyone. Treat yourself to the ultimate luxury vacation. Book your Private Island Retreat now and step into a world of unparalleled beauty and tranquility.",
         "tourPlan": {
-          "1Day": "Beach lounging, spa treatment, and fine dining.",
-          "2Days": "Day 1: Island exploration and sunset yacht cruise. Day 2: Water sports and relaxation."
+          "day1": "Beach lounging, spa treatment, and fine dining.",
+          "days2": "Day 1: Island exploration and sunset yacht cruise. Day 2: Water sports and relaxation."
         },
         "images":{
             "image1":"https://i.ibb.co.com/bz0MB63/Adventure1.jpg",
@@ -95,8 +95,8 @@
         "price": 180,
         "tourInformation": "Venture into the golden dunes with our Desert Safari Expedition and experience the rugged beauty of the desert landscape. This package is perfect for adventure enthusiasts and cultural explorers alike. Embark on an exciting dune-bashing ride, guided by experienced drivers who ensure a thrilling yet safe adventure. Explore the vast desert on camelback and witness the stunning sunset as it paints the dunes in vibrant colors. The package includes a traditional desert camp experience with cultural performances, henna painting, and a sumptuous BBQ dinner under the stars. Choose a one-day safari for a compact experience or a two-day journey for an immersive desert adventure. The two-day package includes a night in the desert, staying in luxury tents equipped with modern amenities, and waking up to a serene sunrise. Perfect for families, friends, or solo travelers, this expedition offers a unique blend of adventure and cultural immersion. Don’t miss the chance to capture incredible photos, create lasting memories, and explore the mystique of the desert. Book your Desert Safari Expedition now for an unforgettable journey into the heart of the dunes.",
         "tourPlan": {
-          "1Day": "Morning dune-bashing, camel ride, and BBQ dinner.",
-          "2Days": "Day 1: Evening desert activities. Day 2: Sunrise photography and camel trek."
+          "day1": "Morning dune-bashing, camel ride, and BBQ dinner.",
+          "days2": "Day 1: Evening desert activities. Day 2: Sunrise photography and camel trek."
         },
         "images":{
             "image1":"https://i.ibb.co.com/bz0MB63/Adventure1.jpg",
@@ -110,8 +110,8 @@
         "price": 120,
         "tourInformation": "Step into the charm of rural life with our Traditional Village Tour. This package is crafted for those who wish to explore the simple yet vibrant culture of village communities. Witness the daily lives of locals, participate in farming activities, and enjoy authentic homemade meals prepared with fresh, organic ingredients. The tour includes visits to local markets, traditional craft workshops, and scenic spots such as paddy fields and riversides. Opt for a one-day tour for a quick cultural dive or a two-day experience to fully immerse yourself in village life. On the two-day trip, enjoy a stay in a rustic yet comfortable homestay, complete with traditional furnishings and warm hospitality. Evening entertainment includes folk music and dance performances, giving you a taste of the region’s rich artistic heritage. This tour is perfect for families, groups, or individuals looking to escape urban life and reconnect with nature and tradition. Capture the essence of village life, learn about sustainable living, and create memories filled with warmth and simplicity. Don’t miss this enriching and heartwarming experience. Book your Traditional Village Tour today and discover the beauty of rural life like never before.",
         "tourPlan": {
-          "1Day": "Village walk, craft workshop, and traditional meal.",
-          "2Days": "Day 1: Farming activities and homestay. Day 2: Market visit and folk performances."
+          "day1": "Village walk, craft workshop, and traditional meal.",
+          "days2": "Day 1: Farming activities and homestay. Day 2: Market visit and folk performances."
         },
         "images":{
             "image1":"https://i.ibb.co.com/bz0MB63/Adventure1.jpg",
@@ -125,8 +125,8 @@
         "price": 220,
         "tourInformation": "Immerse yourself in the lush greenery of the rainforest with our Rainforest Exploration package. This experience is designed for nature lovers, adventurers, and wildlife enthusiasts eager to discover the rich biodiversity of rainforests. Guided by expert naturalists, explore dense trails, spot exotic animals, and marvel at the vibrant flora. The package includes treks through stunning landscapes, visits to hidden waterfalls, and birdwatching expeditions. Choose a one-day exploration for a quick rainforest adventure or a two-day package for a deeper connection with nature. On the two-day trip, enjoy an overnight stay in eco-lodges nestled within the forest, complemented by locally inspired meals. Participate in night treks to experience the enchanting nocturnal life of the rainforest. Perfect for families, friends, or solo adventurers, this exploration promises unforgettable encounters with nature’s wonders. Don’t forget your camera to capture the vibrant wildlife and mesmerizing scenery. Reconnect with the wilderness and refresh your mind and spirit. Book your Rainforest Exploration package now and step into a world where nature reigns supreme.",
         "tourPlan": {
-          "1Day": "Guided rainforest trek and waterfall visit.",
-          "2Days": "Day 1: Day trek and eco-lodge stay. Day 2: Birdwatching and night trek."
+          "day1": "Guided rainforest trek and waterfall visit.",
+          "days2": "Day 1: Day trek and eco-lodge stay. Day 2: Birdwatching and night trek."
         },
         "images":{
             "image1":"https://i.ibb.co.com/bz0MB63/Adventure1.jpg",
@@ -140,8 +140,8 @@
         "price": 400,
         "tourInformation": "Escape the hustle and bustle with our Luxe City Break package, a perfect blend of relaxation and sophistication. This experience is tailored for those who wish to enjoy the best of city life with a touch of luxury. Stay in five-star accommodations, dine at gourmet restaurants, and enjoy VIP access to city landmarks. The package includes spa treatments, private city tours, and access to exclusive shopping districts. Opt for a one-day retreat for a quick indulgence or a two-day stay for a more comprehensive escape. On the two-day trip, enjoy a luxury dinner cruise, attend cultural shows, and relax with personalized services at your hotel. This package is ideal for couples, families, or individuals celebrating special occasions or simply indulging in a well-deserved break. Whether you wish to explore, relax, or shop, this experience is crafted to meet your desires. From the moment you arrive, every detail is managed to ensure your comfort and enjoyment. Don’t wait to pamper yourself – book your Luxe City Break today and indulge in the finer things in life.",
         "tourPlan": {
-          "1Day": "Private city tour, spa session, and fine dining.",
-          "2Days": "Day 1: Landmark tour and shopping. Day 2: Spa day and dinner cruise."
+          "day1": "Private city tour, spa session, and fine dining.",
+          "days2": "Day 1: Landmark tour and shopping. Day 2: Spa day and dinner cruise."
         },
         "images":{
             "image1":"https://i.ibb.co.com/bz0MB63/Adventure1.jpg",

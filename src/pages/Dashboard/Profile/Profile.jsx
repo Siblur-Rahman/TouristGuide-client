@@ -1,4 +1,4 @@
-import { FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaUserAlt } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 
 const Profile = ({userinfo}) => {
@@ -8,10 +8,10 @@ const Profile = ({userinfo}) => {
             <img src={user?.photoURL} alt="" className='w-[300px] h-[300px] rounded-full mx-auto my-4' />
             <div className="text-3xl text-center">Welcome <span className="text-[#00BBA6] font-bold">{userinfo?.role}</span></div>
             <div className="lg:w-3/5 mx-auto my-6 flex text-2xl">
-               <span>Name: </span> <span className="ml-2">{userinfo?.email}</span>    
+               <span><FaUserAlt/> </span> <span className="ml-2 font-bold text-[#00bba6]">{userinfo?.name}</span>    
             </div>       
             <div className="lg:w-3/5 mx-auto my-6 flex text-2xl">
-                <FaEnvelope className=""/><span className="ml-2 -mt-1.5">{userinfo?.email}</span>    
+                <FaEnvelope className=""/><span className="ml-2 -mt-1.5 font-bold text-[#00bba6]">{userinfo?.email}</span>    
             </div>       
         </div>
     );

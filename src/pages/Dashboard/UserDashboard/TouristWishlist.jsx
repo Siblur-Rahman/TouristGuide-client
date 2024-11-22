@@ -84,8 +84,8 @@ const TouristWishlist = () => {
                 {pack?.price}
               </td>
               <th>
-                <button onClick={()=>Delete(`/wishPackage/${pack?._id}`, refetch)} className="btn btn-ghost btn-xs">
-                    <FaTrashAlt/>
+                <button onClick={()=>Delete(`/wishPackage/${pack?._id}`, refetch)} className="mybtn btn-xs">
+                    <FaTrashAlt className="mybtn"/>
                 </button>
               </th>
             </tr>)

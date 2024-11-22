@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import {FaHome, FaList, FaUsers, FaUtensils } from "react-icons/fa";
+import {FaEnvelope, FaHome, FaList, FaUsers, FaUtensils } from "react-icons/fa";
 import useAdmin from "../hooks/useAdmin";
 import useTourGuide from "../hooks/useTourGuide";
 import Swal  from 'sweetalert2';
@@ -39,8 +39,8 @@ const Dashboard = () => {
     return (
         <div className="flex">
             {/*dashboard sidebar*/}
-            <div className="w-64 h-[800px] bg-[#00BBA6]">
-                <ul className="menu p-4">
+            <div className="w-64 h-[820px] bg-[#00BBA6]">
+                <ul className="menu p-4 text-xl">
                     {
                        tourist &&
                             <>
@@ -60,7 +60,7 @@ const Dashboard = () => {
                                         <button 
                                         onClick={()=>handleRequest(tourist)} 
                                         disabled={tourist?.request}
-                                        className="btn btn-ghost bg-orange-300 btn-xs">
+                                        className="mybtn btn-xs">
                                             {
                                                 tourist?.request? 'Requested' : 'Request to be Tour Guide'
                                             }
@@ -74,10 +74,6 @@ const Dashboard = () => {
                                 <li><NavLink to="/dashboard/guideprofile">
                                     <FaHome />
                                     My Profile</NavLink>
-                                </li>
-                                <li><NavLink to="/dashboard/guidebookings">
-                                    <FaList />
-                                    My Booking</NavLink>
                                 </li>
                                 <li><NavLink to="/dashboard/assigned">
                                     <FaList />
@@ -100,6 +96,10 @@ const Dashboard = () => {
                                     <FaUsers />
                                     Manage users</NavLink>
                                 </li>
+                                <li><NavLink to="/dashboard/contacts">
+                                    <FaEnvelope />
+                                    ContacInfo</NavLink>
+                                </li>
                             </>
                     },
 
@@ -109,7 +109,7 @@ const Dashboard = () => {
                         <FaHome />
                         Home</NavLink>
                     </li>
-                    <li><NavLink to="/Community" >Community</NavLink></li>
+                    <li><NavLink to="/Community" ><FaUsers/> Community</NavLink></li>
                     <li><NavLink to="/Contact Us," >Contact Us</NavLink></li>
                 </ul>
             </div>

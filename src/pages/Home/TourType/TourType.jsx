@@ -26,9 +26,9 @@ const TourType = () => {
                     <div className="h-[350px]">
                             <div className="flex justify-center items-center rounded-t-xl relative">
                                 <img src={d?.img} className="h-[275px] top-0 rounded-xl w-full" alt="" />    
-                            <div className="flex flex-col justify-center items-center gap-4 px-4 py-1 absolute top-1/2 bg-slate-100 rounded-xl text-3xl font-bold">
-                                <p>{d?.type}</p>
-                            </div>
+                                <div className="flex flex-col justify-center items-center gap-4 px-4 py-1 absolute bottom-0 bg-white textColor2 rounded-xl text-3xl font-bold">
+                                    <p>{d?.type}</p>
+                                </div>
                             </div>
                     </div>
                     </Link>

@@ -38,9 +38,9 @@ const Banner = () => {
             {
                 images.map(spot => <SwiperSlide key={spot.id} className="">
                   <img src={spot.image} className="rounded-box w-full h-[500px]" />
-                  <div className="absolute left-[30%] top-[50%] text-6xl text-center left- font-bold text-red-600 z-10 p-2 rounded-2xl">
+                  <div className="absolute left-[30%] top-[50%] text-6xl text-center left- font-bold textColor2 z-10 p-2 rounded-2xl">
                     <div>
-                    {spot.country_Name}
+                    {/* {spot.country_Name} */}
                     </div>
                     <hr />
                     <div className="text-white ">

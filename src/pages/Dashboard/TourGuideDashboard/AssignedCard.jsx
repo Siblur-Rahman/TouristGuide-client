@@ -1,12 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import useDelete from './../../../hooks/useDelete';
 
 
-const MyBookingCard = ({bookingPack, index}) => {
-
-  const [Delete] = useDelete();
+const AssignedCard = ({bookingPack, index}) => {
   const navigate = useNavigate()
-  const {_id,tourType, guideName, tourDate, price, } = bookingPack;
+  const {tourType, guideName, tourDate, price, } = bookingPack;
 
   const pay = () => {
     navigate(`pay`);
@@ -28,13 +25,10 @@ const MyBookingCard = ({bookingPack, index}) => {
         {/* <th>{tourDate?.split('T')[0]}</th> */}
         <th>{price}</th>
         <th>
-          <button onClick={pay} className="mybtn">Pay</button>
-        </th>
-        <th>
-          <button onClick={()=>Delete(`/booking/${_id}`)} className="mybtn">Delete</button>
+          <button onClick={pay} className="mybtn btn-xs">Pay</button>
         </th>
       </tr>
   );
 };
 
-export default MyBookingCard;
+export default AssignedCard;

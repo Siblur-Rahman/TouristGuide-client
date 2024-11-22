@@ -1,31 +1,20 @@
 import { useForm } from "react-hook-form";
 import SectionTitle from "../../../components/SectionTitle";
 import { FaUtensils } from "react-icons/fa";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
-const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
-const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
+
 const AddPackage = () => {
     const {
         register,
         handleSubmit,
         reset
       } = useForm()
-      const axiosPublic = useAxiosPublic();
       const axiosSecure = useAxiosSecure();
     
       const onSubmit = async (data) => {
-        console.log(data)
-        // image upload to imgbb and then get an url
-        const imageFile = {image: data.image[0]}
-        const res = await axiosPublic.post(image_hosting_api, imageFile, {
-            headers:{"content-type" : 'multipart/form-data'
 
-            }
-        })
-        if(res.data.success){
             const packageInfo = {
                 tourType:data.tourType,
                 tripTitle: data.tripTitle,
@@ -35,7 +24,11 @@ const AddPackage = () => {
                     day1:data.day1,
                     day2:data.day2,
                 },
-                image: res.data.data.display_url
+                images:{
+                    image1:data.image1,
+                    image2:data.image2,
+                    image3:data.image3,
+                },
             }
             
             const packageRes = await axiosSecure.post('/package', packageInfo);
@@ -50,7 +43,7 @@ const AddPackage = () => {
                   });
                   reset()
             }
-        }
+        // }
     }
         
       return (
@@ -58,7 +51,7 @@ const AddPackage = () => {
             <SectionTitle heading={'Add a Package'} subHeading={"What's New?"}/>
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="form-control w-ful my-2">
+                    <div className="form-control w-ful">
                         <label className="label">
                             <span className="label-text">package Type*</span>
                         </label>
@@ -66,14 +59,14 @@ const AddPackage = () => {
                     </div>
                     <div className="flex gap-6">
                         {/* tripTitle */}
-                        <div className="w-1/2 my-2">
+                        <div className="w-1/2">
                             <label className="label">
                                 <span className="label-text">Trip Title*</span>
                             </label>
                             <input placeholder="Trip Title" className="input input-bordered w-full" {...register("tripTitle")} />
                         </div>
                         {/* price */}
-                        <div className="w-1/2 my-2">
+                        <div className="w-1/2">
                             <label className="label">
                                 <span className="label-text">Price*</span>
                             </label>
@@ -92,14 +85,22 @@ const AddPackage = () => {
                         <label className="label">
                             <span className="label-text">Tour Plan*</span>
                         </label>
-                        <textarea {...register("day1")} className="textarea textarea-bordered min-h-4" placeholder="1Day Plan*"></textarea>
-                        <textarea {...register("day2")} className="textarea textarea-bordered min-h-4" placeholder="2Day Plan*"></textarea>
+                        <div className="gap-2 flex">
+                        <textarea {...register("day1")} className="textarea textarea-bordered min-h-4 w-1/2" placeholder="day1 Plan*"></textarea>
+                        <textarea {...register("day2")} className="textarea textarea-bordered min-h-4 w-1/2" placeholder="2Day Plan*"></textarea>
+                        </div>
                     </div>  
+                        {/* Image URL */}
                     <div>
-                        <input {...register('image', {required: true})} type="file" className="file-input w-full max-w-xs my-2" />
+                    <label className="label">
+                            <span className="label-text"># Images URL*</span>
+                        </label>
+                        <input placeholder="URL-1" {...register('image1', {required: true})} type="text" className="input input-bordered w-full my-1" />
+                        <input placeholder="URL-2" {...register('image2', {required: true})} type="text" className="input input-bordered w-full my-1" />
+                        <input placeholder="URL-3" {...register('image3', {required: true})} type="text" className="input input-bordered w-full my-1" />
                     </div>
                     {/* Submit */}
-                    <button className="btn bg-accent">
+                    <button className="my">
                         Add Package <FaUtensils className="ml-3"/>
                     </button>
                 </form>

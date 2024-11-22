@@ -1,7 +1,7 @@
 import {useNavigate } from 'react-router-dom';
 
 
-const TourGuideCard = ({guide, index}) => {
+const TourGuideShortCard = ({guide, index}) => {
   const { name, image, experience_years, specialties, languages, rating, contact } = guide;
   const navigate = useNavigate();
 
@@ -29,16 +29,14 @@ const TourGuideCard = ({guide, index}) => {
             </div>
             <div>
               <div className="font-bold">{name}</div>
-              <div className="text-sm opacity-50">{languages}</div>
             </div>
           </div>
         </td>
-        <th>{rating}</th>
         <th>
-          <button onClick={viewDetails} className="mybtn">details</button>
+          <button onClick={viewDetails} className="mybtn btn-accent">details</button>
         </th>
       </tr>
   );
 };
 
-export default TourGuideCard;
+export default TourGuideShortCard;

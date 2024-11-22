@@ -3,9 +3,42 @@
 @tailwind utilities;
 
 :root{
-  --Color:#00BBA6;
+  --Color1:#2485B0;
+  --Color2:#2A9D8F;
 }
 
+.active{
+  background-color: var(--Color1) !important;
+  color: red !important;
+}
+.myBorder{
+  border: 2px solid var(--Color2);
+}
+.textColor1{
+  color: var(--Color1);
+}
+.textColor2{
+  color: var(--Color2);
+}
+.bgColor1{
+  background-color: var(--Color1);
+}
+.bgColor2{
+  background-color: var(--Color2);
+}
+
+.mybtn{
+  /* background-color: #2485B0; */
+  background-color: var(--Color2);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.mybtn:hover{
+  background-color: var(--Color1);
+}
 .slick-slide> div {
     margin:  0 10px;
 }
@@ -18,26 +51,16 @@
     gap: 5px;
     flex-wrap: wrap;
   }
-  
-  /* .package-card, .tour-guide-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-    margin: 0 auto;
-  } */
-  
-  /* .package-image img {
-    width: 100%;
-    border-radius: 8px;
-  } */
-  
   .wishlist-icon {
     position: absolute;
     font-size: x-large;
-    bottom: 5px;
+    bottom: 2px;
     right: 10px;
-    /* color: rgb(230, 33, 180); */
     cursor: pointer;
+    color: var(--Color2);
+  }
+  .wishlist-icon:hover {
+    color: var(--Color1);
   }
   .centered{
     position: absolute;

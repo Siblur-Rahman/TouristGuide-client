@@ -13,7 +13,7 @@ const AllStories = () => {
         <div key={index} className='w-[23%]'>
         <Link key={story.id} to={`/stories/${story?._id}`}>
           <div className=" border-2 p-2 text-justify">
-            <h3 className='text-xl my-2 text-[#00BBA6]'>{story.title}</h3>
+            <h3 className='text-xl my-2 font-bold'>{story.title}</h3>
             <p>{story.story?.slice(0, 100)}</p>
           </div>
         </Link>

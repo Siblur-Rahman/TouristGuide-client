@@ -14,25 +14,25 @@ const StoryDetailPage = () => {
   if (!story) return <p>Story not found</p>;
 
   return (
-    <div>
-      <h2>{story.title}</h2>
-      <p>{story?.story}</p>
-<div className='flex gap-4'>
-{user && (
-        <button className='bg-[#00bba6] my-4 px-4 py-2 rounded-lg'>
-        <FacebookShareButton url={window.location.href} className='flex gap-2'>
-          <FacebookIcon size={32} round />
-          Share on Facebook
-        </FacebookShareButton>
+    <div className='lg:pt-10'>
+        <h2 className='text-2xl my-4 font-bold'>{story.title}</h2>
+        <p>{story?.story}</p>
+        <div className='flex gap-4'>
+            {user && (
+                    <button className='bg-[#00bba6] my-4 px-4 py-2 rounded-lg'>
+                    <FacebookShareButton url={window.location.href} className='flex gap-2'>
+                      <FacebookIcon size={32} round />
+                      Share on Facebook
+                    </FacebookShareButton>
 
-        </button>
-      )}
-    <div>
-          <button className='bg-[#00bba6] my-4 px-4 py-4 rounded-lg'>
-            <Link to="/allstories">All Stories</Link>
-          </button>
-    </div>
-</div>
+                    </button>
+                  )}
+            <div>
+                  <button className='bg-[#00bba6] my-4 px-4 py-4 rounded-lg'>
+                    <Link to="/allstories">All Stories</Link>
+                  </button>
+            </div>
+        </div>
     </div>
   );
 };

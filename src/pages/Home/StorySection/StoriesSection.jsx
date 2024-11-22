@@ -11,7 +11,7 @@ const StoriesSection = ({ stories }) => (
         <div key={index} className='w-[23%]'>
         <Link key={story.id} to={`/stories/${story?._id}`}>
           <div className="text-justify border-2">
-            <h3 className='text-xl  my-2 p-2 text-[#00BBA6] text-justify'>{story.title}</h3>
+            <h3 className='text-2xl font-bold  my-2 p-2  text-justify'>{story.title}</h3>
             <p>{story.story?.slice(0, 100)}</p>
           </div>
         </Link>

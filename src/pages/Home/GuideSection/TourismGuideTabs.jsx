@@ -57,14 +57,13 @@ const TourismGuideTabs = () => {
               </div>
             )}
             </div>
-            <button className="btn btn-accent w-full text-xl my-5" onClick={allPack}>View All Packages</button>
+            <button className="mybtn w-full text-xl my-5" onClick={allPack}>View All Packages</button>
           </div>
         </TabPanel>
-
         <TabPanel>
           <div className="">
             <SectionTitle heading={'Meet Our Expert Tour Guides'}/>
-            <div className="overflow-x-auto">
+  <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
     <thead>
