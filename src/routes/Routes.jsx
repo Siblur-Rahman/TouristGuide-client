@@ -62,8 +62,10 @@ export const router = createBrowserRouter([
           element:<PackageDetails/>,
           loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/package/${params.id}`)
         },
-
-
+        {
+          path:'/pay/:packageId',
+          element:<PrivatRoute><Payment/></PrivatRoute>
+        },
       {
         path:'/allpack',
         element:<AllPackages/>

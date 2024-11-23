@@ -1,11 +1,9 @@
 import MyBookingCard from "./myBookingCard";
 import useBookingList from "../../../hooks/useBookingList";
 import SectionTitle from "../../../components/SectionTitle";
-import useAssigned from './../../../hooks/useAssigned';
 
 const TouristBookings = () => {
   const [bookingPackage, refetch] = useBookingList();
-  // const [assignedPackage, refetch]= useAssigned()
 
     return (
         <div className="pr-2">

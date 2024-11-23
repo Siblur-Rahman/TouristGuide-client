@@ -7,10 +7,10 @@ const MyBookingCard = ({bookingPack, index, refetch}) => {
   const [viewDetails]= useDetails()
   const [Delete] = useDelete();
   const navigate = useNavigate()
-  const {_id, tourType, tripTitle, guideName, tourDate, price, packageId, status } = bookingPack;
+  const {_id, tourType, tripTitle, guideName, tourDate, price, packageId, status, paymentStatus } = bookingPack;
 
   const pay = () => {
-    navigate(`pay`);
+    navigate(`/pay/${packageId}`);
   };
 
   return (
@@ -33,7 +33,7 @@ const MyBookingCard = ({bookingPack, index, refetch}) => {
         <td>{new Date(tourDate).toLocaleDateString()}</td>
         <td>{price}</td>
         <td>
-          <button onClick={pay} className="mybtn">Pay</button>
+          <button onClick={pay} disabled={paymentStatus==='paid'} className="mybtn">{paymentStatus==='paid' ? 'paid' : 'Pay' }</button>
         </td>
         <td>
             <button onClick={()=>viewDetails(`/package-details/${packageId}`)} className="mybtn">Details</button>

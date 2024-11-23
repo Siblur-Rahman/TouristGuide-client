@@ -1,12 +1,14 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
+import useCarts from "../../../hooks/useCarts";
 
 
-const CheckoutForm = ({pack}) => {
+const CheckoutForm = ({packageId}) => {
+
     const [error, setError] = useState('');
     const [clientSecret, setClientSecret] = useState('')
     const [transactionId, setTransactionId] = useState('');
@@ -14,9 +16,10 @@ const CheckoutForm = ({pack}) => {
     const elements = useElements();
     const axiosSecure = useAxiosSecure();
     const { user } = useAuth();
+    const [cart, refetch] = useCarts(packageId);
     const navigate = useNavigate();
 
-    const totalPrice = pack?.price
+    const totalPrice = cart?.price;
 
     useEffect(() => {
         if (totalPrice > 0) {
@@ -82,9 +85,8 @@ const CheckoutForm = ({pack}) => {
                     price: totalPrice,
                     transactionId: paymentIntent.id,
                     date: new Date(), // utc date convert. use moment js to 
-                    cartIds: cart.map(item => item._id),
-                    menuItemIds: cart.map(item => item.menuId),
-                    status: 'pending'
+                    bookingsId:cart?._id ,
+                    packageId: cart.packageId,
                 }
 
                 const res = await axiosSecure.post('/payments', payment);
@@ -124,7 +126,7 @@ const CheckoutForm = ({pack}) => {
                     },
                 }}
             />
-            <button className="btn btn-sm btn-primary my-4" type="submit" disabled={!stripe || !clientSecret}>
+            <button className="btn btn-sm btn-primary my-4" type="submit" >
                 Pay
             </button>
             <p className="text-red-600">{error}</p>
