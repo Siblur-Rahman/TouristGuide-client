@@ -1,14 +1,32 @@
-import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
-const AssignedCard = ({bookingPack, index}) => {
-  const navigate = useNavigate()
-  const {tourType, guideName, tourDate, price, } = bookingPack;
+const AssignedCard = ({bookingPack, index, refetch}) => {
+  const axiosSecure = useAxiosSecure()
+  const {tourType, touristName, tourDate, price, packageId, status } = bookingPack;
 
-  const pay = () => {
-    navigate(`pay`);
+  const handleRoleChange = (status) => {
+    axiosSecure
+      .patch(`/booking/status/${packageId}`, { status:status })
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.modifiedCount > 0) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${status}!`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          refetch();
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        
+      });
   };
-
   return (
 
       <tr>
@@ -20,13 +38,17 @@ const AssignedCard = ({bookingPack, index}) => {
         <td>
           {tourType}
         </td>
-        <th>{guideName}</th>
-        <th>{new Date(tourDate).toLocaleDateString()}</th>
+        <td>{touristName}</td>
+        <td>{status}</td>
+        <td>{new Date(tourDate).toLocaleDateString()}</td>
         {/* <th>{tourDate?.split('T')[0]}</th> */}
-        <th>{price}</th>
-        <th>
-          <button onClick={pay} className="mybtn btn-xs">Pay</button>
-        </th>
+        <td>{price}</td>
+        <td>
+          <button onClick={() => handleRoleChange('Accepted')} className="mybtn">Accept</button>
+        </td>
+        <td>
+          <button onClick={() => handleRoleChange('Rejected')} className="mybtn">Rejected</button>
+        </td>
       </tr>
   );
 };

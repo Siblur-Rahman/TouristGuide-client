@@ -31,15 +31,19 @@ const PackageDetails = () => {
       const axiosSecure = useAxiosSecure();
     
       const onSubmit = async (data) => {
+        const res = await axiosSecure.get(`/guideinfo/${data?.tourGuide}`)
             const packageInfo = {
+                packageId:_id,
                 tourType:tourType,
-                // tripTitle: data.tripTitle,
+                tripTitle:tripTitle,
                 touristName:user?.displayName,
                 touristEmail:user?.email,
                 touristImage:user?.photoURL,
-                guideName:data.tourGuide,
+                guideName:res.data.name,
+                guideEmail:res.data.contact.email,
                 price:price,
                 tourDate:startDate,
+                paymentStatus:'pendding',
                 status:'Review',
             }
             

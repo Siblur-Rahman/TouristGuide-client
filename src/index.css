@@ -74,3 +74,11 @@
     z-index: 2;
     background-image: url('./assets/images/Banner/banner.png');
   }
+  .table :where(th, td) {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    font-size: medium;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    vertical-align: middle;
+}

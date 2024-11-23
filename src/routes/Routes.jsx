@@ -25,6 +25,7 @@ import Blogs from "../pages/Blogs/Blogs";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import ContactInfo from "../pages/Dashboard/AdminDashboard/ContactInfo";
 import Assigned from "../pages/Dashboard/TourGuideDashboard/Assigned";
+import Payment from './../pages/Dashboard/Payment/Payment';
 
 export const router = createBrowserRouter([
     {
@@ -61,6 +62,7 @@ export const router = createBrowserRouter([
           element:<PackageDetails/>,
           loader: ({params}) => fetch(`${import.meta.env.VITE_API_URL}/package/${params.id}`)
         },
+
 
       {
         path:'/allpack',
@@ -100,6 +102,10 @@ export const router = createBrowserRouter([
         {
           path:'wishlist',
           element:<PrivatRoute><TouristWishlist/></PrivatRoute>
+        },
+        {
+          path:'payment',
+          element:<PrivatRoute><Payment/></PrivatRoute>
         },
         // Adsmin routes
         {
