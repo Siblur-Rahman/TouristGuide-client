@@ -26,6 +26,7 @@ import ContactUs from "../pages/ContactUs/ContactUs";
 import ContactInfo from "../pages/Dashboard/AdminDashboard/ContactInfo";
 import Assigned from "../pages/Dashboard/TourGuideDashboard/Assigned";
 import Payment from './../pages/Dashboard/Payment/Payment';
+import PaymentHistory from "../pages/Dashboard/Payment/PaymentHistory/PaymentHistory";
 
 export const router = createBrowserRouter([
     {
@@ -108,6 +109,10 @@ export const router = createBrowserRouter([
         {
           path:'payment',
           element:<PrivatRoute><Payment/></PrivatRoute>
+        },
+        {
+          path:'paymentHistory',
+          element:<PaymentHistory/>
         },
         // Adsmin routes
         {
