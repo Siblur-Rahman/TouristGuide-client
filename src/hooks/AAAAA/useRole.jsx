@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import useAxiosSecure from "./useAxiosSecure";
+import useAxiosSecure from "../useAxiosSecure";
 
 
 const useRole = () => {

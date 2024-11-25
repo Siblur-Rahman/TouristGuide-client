@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import useAuth from "./useAuth";
-import useAxiosSecure from "./useAxiosSecure";
+import useAuth from "../useAuth";
+import useAxiosSecure from "../useAxiosSecure";
 
 
 const useTourist = () => {

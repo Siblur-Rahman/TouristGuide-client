@@ -15,6 +15,11 @@ const ManageUsers = () => {
     const searchText = e.target.search.value;
     setSearch(searchText)
     }
+    const filterByRole = async (e) =>{
+      e.preventDefault();
+      const role = e.target.value;
+        setRole(role)
+      }
     // const {data: users = [], refetch} = useQuery({
     //     queryKey:['users'],
     //     queryFn: async () =>{
@@ -61,12 +66,21 @@ const ManageUsers = () => {
         <div>
             <div className="flex justify-evenly">
                 <h2 className="text-4xl uppercase">Total users: {allUsers.length}</h2>
-                {allUsers?.length}
                 <div>
                 <form onSubmit={handleSearch}>
-                <input type="text" name="search" id="" className="border-2 border-black"/>
-                <input type="submit" value="Search"  className="btn"/>
+                <input type="text" name="search" id="" className="input input-bordered"/>
+                <input type="submit" value="Search by name"  className="btn"/>
                 </form>
+                </div>
+                <div className="my-2">
+                        <select onChange={filterByRole}  className="select select-bordered w-full">
+                        <option disabled selected>Select a Guide</option>
+                            <option disabled selected>Select a Role</option>
+                            <option value="admin">Admin</option>
+                            <option value="tourist">Tourist</option>
+                            <option value="tourguide">Tour Guide</option>
+                            <option value="">All</option>
+                        </select>
                 </div>
             </div>
             <div className="overflow-x-auto">
@@ -102,7 +116,7 @@ const ManageUsers = () => {
                         <button 
                         onClick={()=>handleRoleAdmin(user)}
                         disabled = {user?.role==='admin' || user?.role === 'tourguide'}
-                        className="mybtn btn-xs">
+                        className="mybtn flex">
                             <FaUser className="text-white text-2xl"/>
                             Make Admin
                         </button>
@@ -111,7 +125,7 @@ const ManageUsers = () => {
                         <button 
                         onClick={()=>handleRoleGuide(user)} 
                         disabled = {!user?.request || (user?.role ==='admin' || user?.role ==='tourguide')}
-                        className="mybtn btn-xs flex">
+                        className="mybtn flex">
                             <FaUser className="text-white text-2xl"/>
                             <span> Make Guide</span>
                         </button>

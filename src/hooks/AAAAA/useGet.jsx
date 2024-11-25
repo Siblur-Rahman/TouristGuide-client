@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import useAxiosSecure from './useAxiosSecure';
+import useAxiosSecure from '../useAxiosSecure';
 
 const useGet = (api) => {
     const [data, setData] = useState()

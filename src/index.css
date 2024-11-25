@@ -39,6 +39,9 @@
 .mybtn:hover{
   background-color: var(--Color1);
 }
+.mybtn:disabled{
+  background-color: gainsboro;
+}
 .slick-slide> div {
     margin:  0 10px;
 }

@@ -2,7 +2,7 @@ import {useNavigate } from 'react-router-dom';
 
 
 const TourGuideCard = ({guide, index}) => {
-  const { name, image, experience_years, specialties, languages, rating, contact } = guide;
+  const { name, image, experience_years, specialties, languages, contact } = guide;
   const navigate = useNavigate();
 
 
@@ -24,7 +24,7 @@ const TourGuideCard = ({guide, index}) => {
               <div className="mask mask-squircle h-12 w-12">
                 <img
                   src={image}
-                  alt="Avatar Tailwind CSS Component" />
+                  alt="Guide Image" />
               </div>
             </div>
             <div>
@@ -33,7 +33,6 @@ const TourGuideCard = ({guide, index}) => {
             </div>
           </div>
         </td>
-        <th>{rating}</th>
         <th>
           <button onClick={viewDetails} className="mybtn">details</button>
         </th>

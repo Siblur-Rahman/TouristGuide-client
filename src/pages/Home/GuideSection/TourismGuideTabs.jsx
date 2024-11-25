@@ -74,7 +74,6 @@ const TourismGuideTabs = () => {
           </label>
         </th>
         <th>Name</th>
-        <th>Rating</th>
         <th>Details</th>
       </tr>
     </thead>

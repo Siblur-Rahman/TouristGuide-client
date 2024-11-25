@@ -23,11 +23,10 @@ const TouristGuideDetails = () => {
     <h2 className="card-title">{guide?.name}</h2>
     <div className="flex justify-between">
       <span className="text-[#00BBA6] text-xl">{guide?.contact?.email}</span>
-      <span className="text-[#00BBA6] text-xl">{guide?.contact?.phone}</span>
     </div>
+      <div><span className="text-[#00BBA6] text-xl">{guide?.contact?.phone}</span></div>
     <div className="flex justify-between">
       <span className=" text-xl"><span className="text-[#00BBA6]">experience_years:</span> {guide?.experience_years}</span>
-      <span className="text-xl"><span className="text-[#00BBA6]" >Rating: </span>{guide?.rating}</span>
     </div>
     <p>{guide?.bio}</p>
   </div>
