@@ -69,7 +69,8 @@ export const router = createBrowserRouter([
         },
       {
         path:'/allpack',
-        element:<AllPackages/>
+        element:<AllPackages/>,
+        loader: () => fetch(`${import.meta.env.VITE_API_URL}/packagesCount`)
       },
       {
         path:'/packageType/:type',

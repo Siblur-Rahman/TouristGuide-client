@@ -24,7 +24,7 @@ const Login = () => {
    
         else {
             alert('Captcha Does Not Match');
-            setDisabled(false)
+            setDisabled(true)
 
         }
     }

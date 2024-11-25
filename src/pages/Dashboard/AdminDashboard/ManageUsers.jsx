@@ -2,17 +2,27 @@ import { useQuery } from "@tanstack/react-query";
 import { FaUser } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { useState } from "react";
+import useAllUsers from "../../../hooks/useAllUser";
 
 const ManageUsers = () => {
     const axiosSecure = useAxiosSecure();
-    const {data: users = [], refetch} = useQuery({
-        queryKey:['users'],
-        queryFn: async () =>{
-            const res = await axiosSecure.get('/users'
-          );
-            return res.data
-        }
-    });
+    const [role, setRole] = useState('')
+    const [search, setSearch]=useState('')
+    const [allUsers] = useAllUsers(role, search)
+    const handleSearch = (e) =>{
+    e.preventDefault();
+    const searchText = e.target.search.value;
+    setSearch(searchText)
+    }
+    // const {data: users = [], refetch} = useQuery({
+    //     queryKey:['users'],
+    //     queryFn: async () =>{
+    //         const res = await axiosSecure.get('/users'
+    //       );
+    //         return res.data
+    //     }
+    // });
     const handleRoleAdmin = user =>{
         axiosSecure.patch(`/user/admin/${user._id}`)
         .then(res =>{
@@ -25,7 +35,7 @@ const ManageUsers = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
-                  refetch();
+                  // refetch();
             }
         })
     }
@@ -41,14 +51,23 @@ const ManageUsers = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
-                  refetch();
+                  // refetch();
             }
         })
     }
+
+
     return (
         <div>
             <div className="flex justify-evenly">
-                <h2 className="text-4xl uppercase">Total users: {users.length}</h2>
+                <h2 className="text-4xl uppercase">Total users: {allUsers.length}</h2>
+                {allUsers?.length}
+                <div>
+                <form onSubmit={handleSearch}>
+                <input type="text" name="search" id="" className="border-2 border-black"/>
+                <input type="submit" value="Search"  className="btn"/>
+                </form>
+                </div>
             </div>
             <div className="overflow-x-auto">
             <table className="table">
@@ -64,7 +83,7 @@ const ManageUsers = () => {
                 </tr>
               </thead>
               <tbody>
-                {users?.map((user, index) =><tr key={user._id}>
+                {allUsers?.map((user, index) =><tr key={user._id}>
                   <th>
                     <label>
                       {index+1}
